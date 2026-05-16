@@ -77,3 +77,25 @@ div[data-section-name='extendLeftTradingLine'] {
     --tv-color-platform-background: #16141c;
     --tv-color-pane-background: #16141c;
 }
+/* WynnDEX Watermark */
+.chart-markup-table.pane {
+  position: relative;
+}
+
+.chart-markup-table.pane::after {
+  content: "WynnDEX.io";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: "Courier New", Courier, monospace;
+  color: #00ff41;
+  opacity: 0.08;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 9999;
+  letter-spacing: 0.12em;
+  user-select: none;
+}
