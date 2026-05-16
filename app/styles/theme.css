@@ -105,3 +105,24 @@ html, body {
 .orderly-app-container *::after {
   font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
 }
+/* WynnDEX Chart Watermark */
+.oui-trading-page {
+  position: relative;
+}
+
+.chart-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  font-size: 2.8rem;
+  font-weight: 800;
+  font-family: "Courier New", Courier, monospace;
+  color: #00ff41;
+  opacity: 0.07;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 9999;
+  letter-spacing: 0.12em;
+  user-select: none;
+}
