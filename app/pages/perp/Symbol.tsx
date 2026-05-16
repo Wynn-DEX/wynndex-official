@@ -59,7 +59,6 @@ export default function PerpSymbol() {
   >
     WynnDEX.io
   </div>
-        </div>
         <TradingPage
         symbol={symbol}
         onSymbolChange={onSymbolChange}
