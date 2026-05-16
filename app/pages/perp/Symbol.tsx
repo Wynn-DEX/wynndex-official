@@ -39,25 +39,26 @@ export default function PerpSymbol() {
     <div className="h-full">
       {renderSEOTags(pageMeta, pageTitle)}
       <div style={{ position: "relative" }}>
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%) rotate(-20deg)",
-            fontSize: "3rem",
-            fontWeight: "800",
-            fontFamily: "'Courier New', Courier, monospace",
-            color: "#00ff41",
-            opacity: 0.07,
-            pointerEvents: "none",
-            whiteSpace: "nowrap",
-            zIndex: 9999,
-            letterSpacing: "0.12em",
-            userSelect: "none",
-          }}
-        >
-          WynnDEX.io
+  <div
+    style={{
+      position: "fixed",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%) rotate(-20deg)",
+      fontSize: "3rem",
+      fontWeight: "800",
+      fontFamily: "'Courier New', Courier, monospace",
+      color: "#00ff41",
+      opacity: 0.07,
+      pointerEvents: "none",
+      whiteSpace: "nowrap",
+      zIndex: 9999,
+      letterSpacing: "0.12em",
+      userSelect: "none",
+    }}
+  >
+    WynnDEX.io
+  </div>
         </div>
         <TradingPage
         symbol={symbol}
