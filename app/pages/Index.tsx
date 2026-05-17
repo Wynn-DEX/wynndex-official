@@ -78,7 +78,7 @@ export default function Index() {
             <a key={l} href={`#${l.toLowerCase()}`} style={{color:"rgba(0,255,65,0.55)",textDecoration:"none",fontSize:"0.75rem",letterSpacing:"0.15em",textTransform:"uppercase"}}>{l}</a>
           ))}
         </div>
-        <a href="/perp" style={{fontFamily:"'Orbitron',monospace",fontSize:"0.7rem",fontWeight:700,letterSpacing:"0.15em",padding:"0.55rem 1.3rem",background:"transparent",border:"1px solid #00ff41",color:"#00ff41",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%)"}}>Launch App</a>
+        <a href="/perp" style={{fontFamily:"'Orbitron',monospace",fontSize:"0.7rem",fontWeight:700,letterSpacing:"0.15em",padding:"0.55rem 1.3rem",background:"transparent",border:"1px solid #00ff41",color:"#00ff41",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%)"}}>ENTER DEX 🐇</a>
       </nav>
 
       {/* HERO */}
