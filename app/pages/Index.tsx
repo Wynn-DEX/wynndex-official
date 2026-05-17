@@ -74,9 +74,9 @@ export default function Index() {
       <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:100,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"1rem 3rem",background:"rgba(0,0,0,0.88)",backdropFilter:"blur(16px)",borderBottom:"1px solid rgba(0,255,65,0.2)"}}>
         <span style={{fontFamily:"'Orbitron',monospace",fontWeight:900,fontSize:"1.5rem",letterSpacing:"0.2em",color:"#00ff41",textShadow:"0 0 20px #00ff41"}}>Wynn<span style={{color:"#fff"}}>DEX</span></span>
         <div style={{display:"flex",gap:"2rem"}}>
-          <a href="/perp" style={{color:"#ffffff",textDecoration:"none",fontSize:"0.75rem",letterSpacing:"0.15em",textTransform:"uppercase"}}>Trade</a>
-          <a href="#about" style={{color:"#ffffff",textDecoration:"none",fontSize:"0.75rem",letterSpacing:"0.15em",textTransform:"uppercase"}}>About</a>
-          <a href="#features" style={{color:"#ffffff",textDecoration:"none",fontSize:"0.75rem",letterSpacing:"0.15em",textTransform:"uppercase"}}>Features</a>
+          <a href="/perp" className="nav-link">Trade</a>
+          <a href="#about" className="nav-link">About</a>
+          <a href="#features" className="nav-link">Features</a>
         </div>
         <a href="/perp" style={{fontFamily:"'Orbitron',monospace",fontSize:"0.7rem",fontWeight:700,letterSpacing:"0.15em",padding:"0.55rem 1.3rem",background:"transparent",border:"1px solid #00ff41",color:"#00ff41",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%)"}}>ENTER DEX 🐇</a>
       </nav>
@@ -125,7 +125,7 @@ export default function Index() {
         </div>
       </div>
 
-      {/* FEATURES - now appears first */}
+      {/* FEATURES */}
       <section id="features" style={{position:"relative",zIndex:10,padding:"4rem 5rem 6rem",maxWidth:"1400px",margin:"0 auto"}}>
         <div style={{textAlign:"center",marginBottom:"3.5rem"}}>
           <div style={{fontSize:"0.62rem",letterSpacing:"0.3em",color:"#00cc33",textTransform:"uppercase",marginBottom:"0.5rem"}}>// Why WynnDEX</div>
@@ -149,7 +149,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CEO - now appears second */}
+      {/* CEO */}
       <section id="about" style={{position:"relative",zIndex:10,padding:"6rem 5rem",maxWidth:"1400px",margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1.3fr",gap:"5rem",alignItems:"center"}}>
         <div>
           <div style={{fontSize:"0.62rem",letterSpacing:"0.3em",color:"#00cc33",textTransform:"uppercase",marginBottom:"1rem"}}>// Leadership</div>
@@ -189,13 +189,71 @@ export default function Index() {
         <span style={{fontSize:"0.62rem",color:"#ffffff",letterSpacing:"0.08em"}}>© 2025 WynnDEX. All rights reserved. Trading involves risk.</span>
         <div style={{display:"flex",gap:"1.5rem"}}>
           {["Twitter","Discord","Telegram","Docs"].map(l=>(
-            <a key={l} href="#" style={{fontSize:"0.62rem",color:"#ffffff",textDecoration:"none",letterSpacing:"0.1em"}}>{l}</a>
+            <a key={l} href="#" className="footer-link">{l}</a>
           ))}
         </div>
       </footer>
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
+
+        .nav-link {
+          color: #ffffff;
+          text-decoration: none;
+          font-size: 0.75rem;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          position: relative;
+          padding-bottom: 4px;
+          transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0%;
+          height: 1px;
+          background: #00ff41;
+          box-shadow: 0 0 8px #00ff41;
+          transition: width 0.3s ease;
+        }
+        .nav-link:hover {
+          color: #00ff41;
+          text-shadow: 0 0 10px #00ff41, 0 0 20px rgba(0,255,65,0.5);
+        }
+        .nav-link:hover::after {
+          width: 100%;
+        }
+
+        .footer-link {
+          font-size: 0.62rem;
+          color: #ffffff;
+          text-decoration: none;
+          letter-spacing: 0.1em;
+          position: relative;
+          padding-bottom: 3px;
+          transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        .footer-link::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0%;
+          height: 1px;
+          background: #00ff41;
+          box-shadow: 0 0 8px #00ff41;
+          transition: width 0.3s ease;
+        }
+        .footer-link:hover {
+          color: #00ff41;
+          text-shadow: 0 0 10px #00ff41, 0 0 20px rgba(0,255,65,0.5);
+        }
+        .footer-link:hover::after {
+          width: 100%;
+        }
+
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
         @keyframes pulse {
           0%,100% { box-shadow:0 0 15px rgba(0,255,65,0.5),0 0 30px rgba(0,255,65,0.2); transform:scale(1); }
