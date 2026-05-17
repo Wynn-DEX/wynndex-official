@@ -68,7 +68,25 @@ export default function Index() {
       {/* HERO */}
       <section id="trade" style={{position:"relative",zIndex:10,minHeight:"100vh",display:"grid",gridTemplateColumns:"1fr 1fr",alignItems:"center",gap:"4rem",padding:"8rem 5rem 5rem",maxWidth:"1400px",margin:"0 auto"}}>
         <div style={{display:"flex",flexDirection:"column",gap:"1.8rem"}}>
-          <div style={{fontSize:"0.65rem",letterSpacing:"0.35em",color:"#00cc33",textTransform:"uppercase"}}>{">"} Next-generation decentralized exchange</div>
+          <div style={{fontSize:"0.65rem",letterSpacing:"0.35em",color:"#00cc33",textTransform:"uppercase",fontFamily:"'Share Tech Mono',monospace"}} id="typewriter"></div>
+<style>{`
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  .cursor { display:inline-block; animation:blink 1s infinite; }
+`}</style>
+<script dangerouslySetInnerHTML={{__html:`
+  (function(){
+    var el=document.getElementById('typewriter');
+    var text='Follow the white rabbit...';
+    var i=0;
+    function type(){
+      if(i<text.length){
+        el.innerHTML=text.slice(0,++i)+'<span class="cursor">▋</span>';
+        setTimeout(type, i===text.length?0:Math.random()*100+50);
+      }
+    }
+    setTimeout(type,1000);
+  })();
+`}}/>
           <h1 style={{fontFamily:"'Orbitron',monospace",fontSize:"clamp(2.2rem,4.5vw,3.8rem)",fontWeight:900,lineHeight:1.05,color:"#fff"}}>
             TRADE WITHOUT<br/>
             <span style={{color:"#00ff41",textShadow:"0 0 20px #00ff41,0 0 50px rgba(0,255,65,0.4)"}}>LIMITS</span>
