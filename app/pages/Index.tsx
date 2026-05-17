@@ -101,8 +101,6 @@ export default function Index() {
       }
     }
     setTimeout(type,1000);
-  })();
-`}}/>
           <h1 style={{fontFamily:"'Orbitron',monospace",fontSize:"clamp(2.2rem,4.5vw,3.8rem)",fontWeight:900,lineHeight:1.05,color:"#fff"}}>
             TRADE WITHOUT<br/>
             <span style={{color:"#00ff41",textShadow:"0 0 20px #00ff41,0 0 50px rgba(0,255,65,0.4)"}}>LIMITS</span>
