@@ -80,59 +80,20 @@ jobs:
           echo "sync_happened=false" >> $GITHUB_OUTPUT
           git remote add upstream https://github.com/OrderlyNetworkDexCreator/dex-creator-template.git || true
           git fetch upstream
-
-          # dex-creator API replaces vars.VITE_DEPLOYMENT_ENV (see github.ts) with a literal when committing; forks often have no var set.
           DEPLOYMENT_ENV="mainnet"
-
           if [ "$DEPLOYMENT_ENV" = "mainnet" ]; then
             UPSTREAM_BRANCH="main"
-          elif [ "$DEPLOYMENT_ENV" = "staging" ]; then
-            if git rev-parse --verify upstream/staging >/dev/null 2>&1; then
-              UPSTREAM_BRANCH="staging"
-            else
-              UPSTREAM_BRANCH="main"
-            fi
-          elif [ "$DEPLOYMENT_ENV" = "qa" ]; then
-            if git rev-parse --verify upstream/qa >/dev/null 2>&1; then
-              UPSTREAM_BRANCH="qa"
-            elif git rev-parse --verify upstream/staging >/dev/null 2>&1; then
-              UPSTREAM_BRANCH="staging"
-            else
-              UPSTREAM_BRANCH="main"
-            fi
           else
             UPSTREAM_BRANCH="main"
           fi
-
-          # Non-mainnet template lines (qa/staging): on merge conflicts, prefer upstream hunks.
-          # mainnet and fallback-to-main merges stay default (manual resolution if conflict).
-          MERGE_EXTRA=""
-          if [ "$UPSTREAM_BRANCH" = "qa" ] || [ "$UPSTREAM_BRANCH" = "staging" ]; then
-            MERGE_EXTRA="-X theirs"
-            echo "Merging upstream/$UPSTREAM_BRANCH with -X theirs (conflicted hunks favor upstream)"
-          fi
-
           BEFORE_MERGE=$(git rev-parse HEAD)
-          UPSTREAM_TIP=$(git rev-parse "upstream/$UPSTREAM_BRANCH")
-
-          echo "=== Upstream sync ==="
-          echo "DEPLOYMENT_ENV=$DEPLOYMENT_ENV  →  merge target: upstream/$UPSTREAM_BRANCH"
-          echo "Local HEAD (before merge): $BEFORE_MERGE"
-          echo "Upstream tip:              $UPSTREAM_TIP"
-
-          if git merge "upstream/$UPSTREAM_BRANCH" --no-edit $MERGE_EXTRA; then
+          if git merge "upstream/$UPSTREAM_BRANCH" --no-edit; then
             AFTER_MERGE=$(git rev-parse HEAD)
-
             if [ "$BEFORE_MERGE" != "$AFTER_MERGE" ]; then
-              echo "RESULT: Merge succeeded — new commits integrated (HEAD $BEFORE_MERGE → $AFTER_MERGE). Pushing to origin."
               echo "sync_happened=true" >> $GITHUB_OUTPUT
               git push origin main
-            else
-              echo "RESULT: Merge succeeded — nothing to integrate (local main already contains all commits from upstream/$UPSTREAM_BRANCH)."
-              echo "         The 'Already up to date.' line above is from git merge; it means no upstream changes were missing."
             fi
           else
-            echo "RESULT: Merge failed — upstream could not be merged cleanly. Aborting merge."
             git merge --abort 2>/dev/null || true
           fi
 
@@ -141,8 +102,7 @@ jobs:
         with:
           node-version: "20"
           cache: "yarn"
-          cache-dependency-path: |
-            yarn.lock
+          cache-dependency-path: yarn.lock
 
       - name: Cache node_modules
         uses: actions/cache@v4
@@ -159,10 +119,8 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "needs_build=true" >> $GITHUB_OUTPUT
-            echo "Manual trigger detected - forcing full build"
           elif [ "${{ steps.sync_fork.outputs.sync_happened }}" = "true" ]; then
             echo "needs_build=true" >> $GITHUB_OUTPUT
-            echo "Fork sync happened - forcing full build"
           elif git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q -v "^public/config\.js$"; then
             echo "needs_build=true" >> $GITHUB_OUTPUT
           else
@@ -181,61 +139,30 @@ jobs:
             echo "Found custom domain: $(cat CNAME)"
           else
             echo "has_custom_domain=false" >> $GITHUB_OUTPUT
-            echo "No custom domain configured"
           fi
-
-      - name: Restore previous build (if only config changed)
-        if: steps.check-changes.outputs.needs_build == 'false'
-        uses: actions/cache/restore@v4
-        with:
-          path: ./build
-          key: ${{ runner.os }}-build-${{ github.repository }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ github.repository }}
-        continue-on-error: true
-
-      - name: Check if build directory exists
-        if: steps.check-changes.outputs.needs_build == 'false'
-        run: |
-          if [ -d "./build" ] && [ "$(ls -A ./build)" ]; then
-            echo "Build directory found with content"
-          else
-            echo "needs_build=true" >> $GITHUB_OUTPUT
-            echo "Build directory empty or missing, forcing full build"
-          fi
-        id: force-build
 
       - name: Install dependencies
-        if: steps.check-changes.outputs.needs_build == 'true' || steps.force-build.outputs.needs_build == 'true'
+        if: steps.check-changes.outputs.needs_build == 'true'
         run: yarn install --frozen-lockfile --prefer-offline
 
-      - name: Build with repository base path
-        if: ${{ steps.check-custom-domain.outputs.has_custom_domain == 'false' && (steps.check-changes.outputs.needs_build == 'true' || steps.force-build.outputs.needs_build == 'true') }}
-        run: yarn build:spa
-        env:
-          # Set the base path for GitHub Pages using repo name
-          PUBLIC_PATH: /${{ env.REPO_NAME }}/
-          # Also set it as VITE environment variables
-          VITE_PUBLIC_PATH: /${{ env.REPO_NAME }}/
-          VITE_BASE_URL: /${{ env.REPO_NAME }}
-
       - name: Build with root base path (for custom domain)
-        if: ${{ steps.check-custom-domain.outputs.has_custom_domain == 'true' && (steps.check-changes.outputs.needs_build == 'true' || steps.force-build.outputs.needs_build == 'true') }}
+        if: steps.check-custom-domain.outputs.has_custom_domain == 'true' && steps.check-changes.outputs.needs_build == 'true'
         run: yarn build:spa
         env:
-          # For custom domains, use root path
           PUBLIC_PATH: /
           VITE_PUBLIC_PATH: /
           VITE_BASE_URL: ""
 
-      - name: Copy updated config to build (if using cached build)
-        if: steps.check-changes.outputs.needs_build == 'false' && steps.force-build.outputs.needs_build != 'true'
-        run: |
-          cp public/config.js ./build/client/config.js
-          echo "✅ Updated config.js copied to build output"
+      - name: Build with repository base path
+        if: steps.check-custom-domain.outputs.has_custom_domain == 'false' && steps.check-changes.outputs.needs_build == 'true'
+        run: yarn build:spa
+        env:
+          PUBLIC_PATH: /${{ env.REPO_NAME }}/
+          VITE_PUBLIC_PATH: /${{ env.REPO_NAME }}/
+          VITE_BASE_URL: /${{ env.REPO_NAME }}
 
       - name: Cache build artifacts
-        if: steps.check-changes.outputs.needs_build == 'true' || steps.force-build.outputs.needs_build == 'true'
+        if: steps.check-changes.outputs.needs_build == 'true'
         uses: actions/cache/save@v4
         with:
           path: ./build
@@ -256,7 +183,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-        - name: Deploy to Cloudflare Workers
+      - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
