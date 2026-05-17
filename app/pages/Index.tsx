@@ -34,7 +34,23 @@ export default function Index() {
     const interval = setInterval(draw, 45);
     return () => { clearInterval(interval); window.removeEventListener("resize", init); };
   }, []);
+  useEffect(() => {
+    const el = document.getElementById('typewriter');
+    if (!el) return;
+    const text = 'Follow the white rabbit...';
+    let i = 0;
+    el.innerHTML = '';
+    const type = () => {
+      if (i < text.length) {
+        el.innerHTML = text.slice(0, ++i) + '<span style="display:inline-block;animation:blink 1s infinite">▋</span>';
+        setTimeout(type, Math.random() * 100 + 50);
+      }
+    };
+    const timer = setTimeout(type, 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
+  
   const tickers = [
     {name:"BTC/USDC",price:"$78,176",change:"+0.11%",up:true},
     {name:"ETH/USDC",price:"$2,173",change:"-2.36%",up:false},
