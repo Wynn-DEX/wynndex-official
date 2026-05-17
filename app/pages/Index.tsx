@@ -112,7 +112,7 @@ export default function Index() {
           </p>
 
           <div style={{display:"flex",gap:"1rem",alignItems:"center"}}>
-            <a href="/perp" style={{fontFamily:"'Orbitron',monospace",fontSize:"0.85rem",fontWeight:900,letterSpacing:"0.2em",padding:"1rem 2.5rem",background:"#00ff41",color:"#000",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)",animation:"pulse 2s ease-in-out infinite",display:"inline-block"}}>>ENTER DEX <span style={{fontSize:"1.45em"}}>🐇</span></a>
+            <a href="/perp" style={{fontFamily:"'Orbitron',monospace",fontSize:"0.85rem",fontWeight:900,letterSpacing:"0.2em",padding:"1rem 2.5rem",background:"#00ff41",color:"#000",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)",animation:"pulse 2s ease-in-out infinite",display:"inline-block"}}>ENTER DEX <span style={{fontSize:"1.45em"}}>🐇</span></a>
             <a href="#features" style={{fontSize:"0.8rem",letterSpacing:"0.15em",padding:"0.9rem 1.8rem",background:"transparent",border:"1px solid rgba(0,255,65,0.2)",color:"rgba(0,255,65,0.6)",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)"}}>Learn More</a>
           </div>
         </div>
