@@ -74,9 +74,9 @@ export default function Index() {
       <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:100,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"1rem 3rem",background:"rgba(0,0,0,0.88)",backdropFilter:"blur(16px)",borderBottom:"1px solid rgba(0,255,65,0.2)"}}>
         <span style={{fontFamily:"'Orbitron',monospace",fontWeight:900,fontSize:"1.5rem",letterSpacing:"0.2em",color:"#00ff41",textShadow:"0 0 20px #00ff41"}}>Wynn<span style={{color:"#fff"}}>DEX</span></span>
         <div style={{display:"flex",gap:"2rem"}}>
-          <a href="/perp" style={{color:"rgba(0,255,65,0.55)",textDecoration:"none",fontSize:"0.75rem",letterSpacing:"0.15em",textTransform:"uppercase"}}>Trade</a>
-          <a href="#about" style={{color:"rgba(0,255,65,0.55)",textDecoration:"none",fontSize:"0.75rem",letterSpacing:"0.15em",textTransform:"uppercase"}}>About</a>
-          <a href="#features" style={{color:"rgba(0,255,65,0.55)",textDecoration:"none",fontSize:"0.75rem",letterSpacing:"0.15em",textTransform:"uppercase"}}>Features</a>
+          <a href="/perp" style={{color:"#ffffff",textDecoration:"none",fontSize:"0.75rem",letterSpacing:"0.15em",textTransform:"uppercase"}}>Trade</a>
+          <a href="#about" style={{color:"#ffffff",textDecoration:"none",fontSize:"0.75rem",letterSpacing:"0.15em",textTransform:"uppercase"}}>About</a>
+          <a href="#features" style={{color:"#ffffff",textDecoration:"none",fontSize:"0.75rem",letterSpacing:"0.15em",textTransform:"uppercase"}}>Features</a>
         </div>
         <a href="/perp" style={{fontFamily:"'Orbitron',monospace",fontSize:"0.7rem",fontWeight:700,letterSpacing:"0.15em",padding:"0.55rem 1.3rem",background:"transparent",border:"1px solid #00ff41",color:"#00ff41",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%)"}}>ENTER DEX 🐇</a>
       </nav>
@@ -89,7 +89,7 @@ export default function Index() {
             TRADE WITHOUT<br/>
             <span style={{color:"#00ff41",textShadow:"0 0 20px #00ff41,0 0 50px rgba(0,255,65,0.4)"}}>LIMITS</span>
           </h1>
-          <p style={{fontSize:"0.88rem",lineHeight:1.9,color:"rgba(0,255,65,0.6)",maxWidth:"480px"}}>
+          <p style={{fontSize:"0.88rem",lineHeight:1.9,color:"#ffffff",maxWidth:"480px"}}>
             WynnDEX is a high-performance perpetuals exchange built for serious traders. Deep liquidity. Zero compromises. Your keys, your trades.
           </p>
 
@@ -132,7 +132,7 @@ export default function Index() {
           <div style={{fontSize:"0.62rem",letterSpacing:"0.3em",color:"#00cc33",textTransform:"uppercase",marginBottom:"1rem"}}>// Leadership</div>
           <h2 style={{fontFamily:"'Orbitron',monospace",fontSize:"2rem",fontWeight:900,color:"#fff",marginBottom:"0.4rem"}}>JAMES WYNN</h2>
           <div style={{fontSize:"0.72rem",letterSpacing:"0.2em",color:"#00ff41",textTransform:"uppercase",marginBottom:"2rem"}}>Founder, CEO & Chief Trader</div>
-          <p style={{fontSize:"0.83rem",lineHeight:2,color:"rgba(0,255,65,0.55)",marginBottom:"2rem"}}>
+          <p style={{fontSize:"0.83rem",lineHeight:2,color:"#ffffff",marginBottom:"2rem"}}>
             James Wynn is a high-stakes crypto trader known for turning conviction, timing, and calculated aggression into some of the most talked-about trades in the digital asset space.<br/><br/>
             In just two months, he turned a small amount of capital into an astonishing <strong style={{color:"#00ff41"}}>$87,000,000</strong>. His conviction translated into profits exceeding <strong style={{color:"#00ff41"}}>$25,000,000</strong> in meme coin trades alone — cementing his reputation as one of the sharpest traders in crypto.
           </p>
@@ -140,7 +140,7 @@ export default function Index() {
             {[["$1.26B","Largest BTC Long Position in History"],["$87M","Profit in 60 Days"],["$25M+","Meme Coin Trading Profits"],["#1","Most Talked-About Crypto Trader"]].map(([v,l])=>(
               <div key={l} style={{background:"rgba(0,255,65,0.04)",border:"1px solid rgba(0,255,65,0.2)",padding:"1.2rem",clipPath:"polygon(8px 0%,100% 0%,100% calc(100% - 8px),calc(100% - 8px) 100%,0% 100%,0% 8px)"}}>
                 <div style={{fontFamily:"'Orbitron',monospace",fontSize:"1.2rem",fontWeight:700,color:"#00ff41",marginBottom:"0.3rem"}}>{v}</div>
-                <div style={{fontSize:"0.62rem",letterSpacing:"0.1em",color:"rgba(0,255,65,0.4)",textTransform:"uppercase",lineHeight:1.5}}>{l}</div>
+                <div style={{fontSize:"0.62rem",letterSpacing:"0.1em",color:"#ffffff",textTransform:"uppercase",lineHeight:1.5}}>{l}</div>
               </div>
             ))}
           </div>
@@ -168,7 +168,7 @@ export default function Index() {
             <div key={title as string} style={{background:"rgba(0,255,65,0.04)",border:"1px solid rgba(0,255,65,0.2)",padding:"2rem",clipPath:"polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)"}}>
               <div style={{fontSize:"1.8rem",marginBottom:"1rem"}}>{icon}</div>
               <div style={{fontFamily:"'Orbitron',monospace",fontSize:"0.82rem",fontWeight:700,color:"#fff",marginBottom:"0.8rem",letterSpacing:"0.08em"}}>{title}</div>
-              <p style={{fontSize:"0.77rem",lineHeight:1.9,color:"rgba(0,255,65,0.5)"}}>{desc}</p>
+              <p style={{fontSize:"0.77rem",lineHeight:1.9,color:"#ffffff"}}>{desc}</p>
             </div>
           ))}
         </div>
@@ -187,10 +187,10 @@ export default function Index() {
       {/* FOOTER */}
       <footer style={{position:"relative",zIndex:10,background:"rgba(0,0,0,0.95)",borderTop:"1px solid rgba(0,255,65,0.2)",padding:"2rem 5rem",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
         <span style={{fontFamily:"'Orbitron',monospace",fontWeight:900,fontSize:"1rem",color:"#00ff41"}}>Wynn<span style={{color:"#fff"}}>DEX</span></span>
-        <span style={{fontSize:"0.62rem",color:"rgba(0,255,65,0.3)",letterSpacing:"0.08em"}}>© 2025 WynnDEX. All rights reserved. Trading involves risk.</span>
+        <span style={{fontSize:"0.62rem",color:"#ffffff",letterSpacing:"0.08em"}}>© 2025 WynnDEX. All rights reserved. Trading involves risk.</span>
         <div style={{display:"flex",gap:"1.5rem"}}>
           {["Twitter","Discord","Telegram","Docs"].map(l=>(
-            <a key={l} href="#" style={{fontSize:"0.62rem",color:"rgba(0,255,65,0.35)",textDecoration:"none",letterSpacing:"0.1em"}}>{l}</a>
+            <a key={l} href="#" style={{fontSize:"0.62rem",color:"#ffffff",textDecoration:"none",letterSpacing:"0.1em"}}>{l}</a>
           ))}
         </div>
       </footer>
