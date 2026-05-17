@@ -76,14 +76,7 @@ export default function Index() {
           <p style={{fontSize:"0.88rem",lineHeight:1.9,color:"rgba(0,255,65,0.6)",maxWidth:"480px"}}>
             WynnDEX is a high-performance perpetuals exchange built for serious traders. Deep liquidity. Zero compromises. Your keys, your trades.
           </p>
-          <div style={{display:"flex",gap:"2.5rem"}}>
-            {[["$1.26B","Record BTC Long"],["$87M","Profit in 60 Days"],["100x","Max Leverage"]].map(([v,l])=>(
-              <div key={l} style={{display:"flex",flexDirection:"column",gap:"0.25rem"}}>
-                <span style={{fontFamily:"'Orbitron',monospace",fontSize:"1.25rem",fontWeight:700,color:"#00ff41",textShadow:"0 0 10px rgba(0,255,65,0.4)"}}>{v}</span>
-                <span style={{fontSize:"0.62rem",letterSpacing:"0.15em",color:"rgba(0,255,65,0.4)",textTransform:"uppercase"}}>{l}</span>
-              </div>
-            ))}
-          </div>
+
           <div style={{display:"flex",gap:"1rem",alignItems:"center"}}>
             <a href="/perp" style={{fontFamily:"'Orbitron',monospace",fontSize:"0.85rem",fontWeight:900,letterSpacing:"0.2em",padding:"1rem 2.5rem",background:"#00ff41",color:"#000",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)",animation:"pulse 2s ease-in-out infinite",display:"inline-block"}}>⚡ TRADE NOW</a>
             <a href="#features" style={{fontSize:"0.8rem",letterSpacing:"0.15em",padding:"0.9rem 1.8rem",background:"transparent",border:"1px solid rgba(0,255,65,0.2)",color:"rgba(0,255,65,0.6)",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)"}}>Learn More</a>
