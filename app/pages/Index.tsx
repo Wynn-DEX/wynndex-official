@@ -92,7 +92,6 @@ export default function Index() {
           <p style={{fontSize:"0.88rem",lineHeight:1.9,color:"#ffffff",maxWidth:"480px"}}>
             WynnDEX is a high-performance perpetuals exchange built for serious traders. Deep liquidity. Zero compromises. Your keys, your trades.
           </p>
-
           <div style={{display:"flex",gap:"1rem",alignItems:"center"}}>
             <a href="/perp" style={{fontFamily:"'Orbitron',monospace",fontSize:"0.85rem",fontWeight:900,letterSpacing:"0.2em",padding:"1rem 2.5rem",background:"#00ff41",color:"#000",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)",animation:"pulse 2s ease-in-out infinite",display:"inline-block"}}>{"ENTER DEX "}<span style={{fontSize:"1.45em"}}>🐇</span></a>
             <a href="#features" style={{fontSize:"0.8rem",letterSpacing:"0.15em",padding:"0.9rem 1.8rem",background:"transparent",border:"1px solid rgba(0,255,65,0.2)",color:"rgba(0,255,65,0.6)",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)"}}>Learn More</a>
@@ -126,31 +125,7 @@ export default function Index() {
         </div>
       </div>
 
-      {/* CEO */}
-      <section id="about" style={{position:"relative",zIndex:10,padding:"6rem 5rem",maxWidth:"1400px",margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1.3fr",gap:"5rem",alignItems:"center"}}>
-        <div>
-          <div style={{fontSize:"0.62rem",letterSpacing:"0.3em",color:"#00cc33",textTransform:"uppercase",marginBottom:"1rem"}}>// Leadership</div>
-          <h2 style={{fontFamily:"'Orbitron',monospace",fontSize:"2rem",fontWeight:900,color:"#fff",marginBottom:"0.4rem"}}>JAMES WYNN</h2>
-          <div style={{fontSize:"0.72rem",letterSpacing:"0.2em",color:"#00ff41",textTransform:"uppercase",marginBottom:"2rem"}}>Founder, CEO & Chief Trader</div>
-          <p style={{fontSize:"0.83rem",lineHeight:2,color:"#ffffff",marginBottom:"2rem"}}>
-            James Wynn is a high-stakes crypto trader known for turning conviction, timing, and calculated aggression into some of the most talked-about trades in the digital asset space.<br/><br/>
-            In just two months, he turned a small amount of capital into an astonishing <strong style={{color:"#00ff41"}}>$87,000,000</strong>. His conviction translated into profits exceeding <strong style={{color:"#00ff41"}}>$25,000,000</strong> in meme coin trades alone — cementing his reputation as one of the sharpest traders in crypto.
-          </p>
-          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"1rem"}}>
-            {[["$1.26B","Largest BTC Long Position in History"],["$87M","Profit in 60 Days"],["$25M+","Meme Coin Trading Profits"],["#1","Most Talked-About Crypto Trader"]].map(([v,l])=>(
-              <div key={l} style={{background:"rgba(0,255,65,0.04)",border:"1px solid rgba(0,255,65,0.2)",padding:"1.2rem",clipPath:"polygon(8px 0%,100% 0%,100% calc(100% - 8px),calc(100% - 8px) 100%,0% 100%,0% 8px)"}}>
-                <div style={{fontFamily:"'Orbitron',monospace",fontSize:"1.2rem",fontWeight:700,color:"#00ff41",marginBottom:"0.3rem"}}>{v}</div>
-                <div style={{fontSize:"0.62rem",letterSpacing:"0.1em",color:"#ffffff",textTransform:"uppercase",lineHeight:1.5}}>{l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div style={{position:"relative",display:"flex",justifyContent:"center"}}>
-          <img src="/avatar.jpeg" alt="James Wynn" style={{width:"100%",maxWidth:"460px",height:"500px",objectFit:"cover",objectPosition:"top",border:"1px solid rgba(0,255,65,0.2)",clipPath:"polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,30px 100%,0 calc(100% - 30px))"}} />
-        </div>
-      </section>
-
-      {/* FEATURES */}
+      {/* FEATURES - now appears first */}
       <section id="features" style={{position:"relative",zIndex:10,padding:"4rem 5rem 6rem",maxWidth:"1400px",margin:"0 auto"}}>
         <div style={{textAlign:"center",marginBottom:"3.5rem"}}>
           <div style={{fontSize:"0.62rem",letterSpacing:"0.3em",color:"#00cc33",textTransform:"uppercase",marginBottom:"0.5rem"}}>// Why WynnDEX</div>
@@ -171,6 +146,30 @@ export default function Index() {
               <p style={{fontSize:"0.77rem",lineHeight:1.9,color:"#ffffff"}}>{desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* CEO - now appears second */}
+      <section id="about" style={{position:"relative",zIndex:10,padding:"6rem 5rem",maxWidth:"1400px",margin:"0 auto",display:"grid",gridTemplateColumns:"1fr 1.3fr",gap:"5rem",alignItems:"center"}}>
+        <div>
+          <div style={{fontSize:"0.62rem",letterSpacing:"0.3em",color:"#00cc33",textTransform:"uppercase",marginBottom:"1rem"}}>// Leadership</div>
+          <h2 style={{fontFamily:"'Orbitron',monospace",fontSize:"2rem",fontWeight:900,color:"#fff",marginBottom:"0.4rem"}}>JAMES WYNN</h2>
+          <div style={{fontSize:"0.72rem",letterSpacing:"0.2em",color:"#00ff41",textTransform:"uppercase",marginBottom:"2rem"}}>Founder, CEO & Chief Trader</div>
+          <p style={{fontSize:"0.83rem",lineHeight:2,color:"#ffffff",marginBottom:"2rem"}}>
+            James Wynn is a high-stakes crypto trader known for turning conviction, timing, and calculated aggression into some of the most talked-about trades in the digital asset space.<br/><br/>
+            In just two months, he turned a small amount of capital into an astonishing <strong style={{color:"#00ff41"}}>$87,000,000</strong>. His conviction translated into profits exceeding <strong style={{color:"#00ff41"}}>$25,000,000</strong> in meme coin trades alone — cementing his reputation as one of the sharpest traders in crypto.
+          </p>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"1rem"}}>
+            {[["$1.26B","Largest BTC Long Position in History"],["$87M","Profit in 60 Days"],["$25M+","Meme Coin Trading Profits"],["#1","Most Talked-About Crypto Trader"]].map(([v,l])=>(
+              <div key={l} style={{background:"rgba(0,255,65,0.04)",border:"1px solid rgba(0,255,65,0.2)",padding:"1.2rem",clipPath:"polygon(8px 0%,100% 0%,100% calc(100% - 8px),calc(100% - 8px) 100%,0% 100%,0% 8px)"}}>
+                <div style={{fontFamily:"'Orbitron',monospace",fontSize:"1.2rem",fontWeight:700,color:"#00ff41",marginBottom:"0.3rem"}}>{v}</div>
+                <div style={{fontSize:"0.62rem",letterSpacing:"0.1em",color:"#ffffff",textTransform:"uppercase",lineHeight:1.5}}>{l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style={{position:"relative",display:"flex",justifyContent:"center"}}>
+          <img src="/avatar.jpeg" alt="James Wynn" style={{width:"100%",maxWidth:"460px",height:"500px",objectFit:"cover",objectPosition:"top",border:"1px solid rgba(0,255,65,0.2)",clipPath:"polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,30px 100%,0 calc(100% - 30px))"}} />
         </div>
       </section>
 
