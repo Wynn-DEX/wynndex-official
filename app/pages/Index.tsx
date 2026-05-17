@@ -110,7 +110,18 @@ export default function Index() {
           <p style={{fontSize:"0.88rem",lineHeight:1.9,color:"rgba(0,255,65,0.6)",maxWidth:"480px"}}>
             WynnDEX is a high-performance perpetuals exchange built for serious traders. Deep liquidity. Zero compromises. Your keys, your trades.
           </p>
+<div style={{display:"flex",gap:"1rem",alignItems:"center"}}>
+            <a href="/perp" style={{fontFamily:"'Orbitron',monospace",fontSize:"0.85rem",fontWeight:900,letterSpacing:"0.2em",padding:"1rem 2.5rem",background:"#00ff41",color:"#000",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)",animation:"pulse 2s ease-in-out infinite",display:"inline-block"}}>ENTER DEX <span style={{fontSize:"1.45em"}}>🐇</span></a>
+            <a href="#features" style={{fontSize:"0.8rem",letterSpacing:"0.15em",padding:"0.9rem 1.8rem",background:"transparent",border:"1px solid rgba(0,255,65,0.2)",color:"rgba(0,255,65,0.6)",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)"}}>Learn More</a>
+          </div>
+        </div>
 
+        {/* AVATAR */}
+        <div style={{position:"relative",display:"flex",justifyContent:"center",alignItems:"center"}}>
+          <div style={{position:"relative",width:"400px",height:"400px"}}>
+            <div style={{position:"absolute",inset:"-38px",border:"1px solid rgba(0,255,65,0.1)",borderRadius:"50%",animation:"spin 22s linear infinite reverse"}} />
+            <div style={{position:"absolute",inset:"-20px",border:"1px solid rgba(0,255,65,0.25)",borderRadius:"50%",animation:"spin 12s linear infinite"}} />
+            <img src="/avatar.jpeg" alt="James Wynn" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"50%",border:"2px solid rgba(0,255,65,0.3)",boxShadow:"0 0 50px rgba(0,255,65,0.15)"}} />
           </div>
           <div style={{position:"absolute",bottom:"-55px",left:"50%",transform:"translateX(-50%)",textAlign:"center",whiteSpace:"nowrap"}}>
             <div style={{fontFamily:"'Orbitron',monospace",fontSize:"1rem",fontWeight:700,color:"#fff",letterSpacing:"0.15em"}}>JAMES WYNN</div>
