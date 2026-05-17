@@ -7,15 +7,18 @@ import { formatSymbol, generatePageTitle } from "@/utils/utils";
 import { useOrderlyConfig } from "@/utils/config";
 import { getPageMeta } from "@/utils/seo";
 import { renderSEOTags } from "@/utils/seo-tags";
+
 export default function PerpSymbol() {
   const params = useParams();
   const [symbol, setSymbol] = useState(params.symbol!);
   const config = useOrderlyConfig();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+
   useEffect(() => {
     updateSymbol(symbol);
   }, [symbol]);
+
   const onSymbolChange = useCallback(
     (data: API.Symbol) => {
       const symbol = data.symbol;
@@ -26,8 +29,10 @@ export default function PerpSymbol() {
     },
     [navigate, searchParams]
   );
+
   const pageMeta = getPageMeta();
   const pageTitle = generatePageTitle(formatSymbol(params.symbol!));
+
   return (
     <div className="h-full">
       {renderSEOTags(pageMeta, pageTitle)}
