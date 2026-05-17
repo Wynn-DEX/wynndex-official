@@ -84,7 +84,7 @@ export default function Index() {
       {/* HERO */}
       <section id="trade" style={{position:"relative",zIndex:10,minHeight:"100vh",display:"grid",gridTemplateColumns:"1fr 1fr",alignItems:"center",gap:"4rem",padding:"8rem 5rem 5rem",maxWidth:"1400px",margin:"0 auto"}}>
         <div style={{display:"flex",flexDirection:"column",gap:"1.8rem"}}>
-          <div style={{fontSize:"0.65rem",letterSpacing:"0.35em",color:"#00cc33",textTransform:"uppercase",fontFamily:"'Share Tech Mono',monospace"}} id="typewriter"></div>
+          <div style={{fontSize:"0.85rem",letterSpacing:"0.35em",color:"#00cc33",textTransform:"uppercase",fontFamily:"'Share Tech Mono',monospace"}} id="typewriter"></div>
 <style>{`
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
   .cursor { display:inline-block; animation:blink 1s infinite; }
