@@ -77,6 +77,7 @@ export default function Index() {
           <a href="/perp" className="nav-link">Trade</a>
           <a href="#about" className="nav-link">About</a>
           <a href="#features" className="nav-link">Features</a>
+          <a href="/about" className="nav-link">About WYNN DEX</a>
         </div>
         <a href="/perp" style={{fontFamily:"'Orbitron',monospace",fontSize:"0.7rem",fontWeight:700,letterSpacing:"0.15em",padding:"0.55rem 1.3rem",background:"transparent",border:"1px solid #00ff41",color:"#00ff41",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%)"}}>ENTER DEX 🐇</a>
       </nav>
