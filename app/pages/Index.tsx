@@ -72,7 +72,10 @@ export default function Index() {
 
       {/* NAV */}
       <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:100,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"1rem 3rem",background:"rgba(0,0,0,0.88)",backdropFilter:"blur(16px)",borderBottom:"1px solid rgba(0,255,65,0.2)"}}>
-        <span style={{fontFamily:"'Orbitron',monospace",fontWeight:900,fontSize:"1.5rem",letterSpacing:"0.2em",color:"#00ff41",textShadow:"0 0 20px #00ff41"}}>Wynn<span style={{color:"#fff"}}>DEX</span></span>
+        <div style={{display:"flex",alignItems:"center",gap:"0.75rem"}}>
+          <span style={{fontFamily:"'Orbitron',monospace",fontWeight:900,fontSize:"1.5rem",letterSpacing:"0.2em",color:"#00ff41",textShadow:"0 0 20px #00ff41"}}>Wynn<span style={{color:"#fff"}}>DEX</span></span>
+          <img src="/logo-icon.jpeg.JPG" alt="WynnDEX icon" style={{height:"40px",width:"40px",objectFit:"contain",filter:"drop-shadow(0 0 8px #00ff41)"}} />
+        </div>
         <div style={{display:"flex",gap:"2rem"}}>
           <a href="/perp" className="nav-link">Trade</a>
           <a href="#about" className="nav-link">About</a>
