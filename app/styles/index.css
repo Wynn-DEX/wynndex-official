@@ -10,16 +10,18 @@
 }
 /* HEADER - solid black matching wynndex.io home page */
 .oui-scaffold-root .oui-scaffold-topNavbar>header {
-  height: 88px;
-  min-height: 88px;
+  height: 64px !important;
+  min-height: 64px !important;
   background: #000000 !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   box-shadow: none !important;
   border-bottom: none !important;
+  display: flex !important;
+  align-items: center !important;
 }
 .oui-scaffold-root .oui-scaffold-topNavbar>header a>img {
-  height: 85px !important;
+  height: 40px !important;
   width: auto !important;
   max-width: none !important;
   flex-shrink: 0;
@@ -65,9 +67,11 @@
     -webkit-backdrop-filter: blur(16px) !important;
     box-shadow: none !important;
     border-bottom: none !important;
+    display: flex !important;
+    align-items: center !important;
   }
   .oui-scaffold-root.oui-w-full>header img[alt="logo"] {
-    height: 58px !important;
+    height: 36px !important;
     width: auto !important;
     max-width: none !important;
     flex-shrink: 0;
