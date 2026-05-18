@@ -1,38 +1,30 @@
 :root {
   --oui-font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
   --oui-font-size-base: 16px;
-
   /* colors */
-  --oui-color-primary: 3 255 0;
-  --oui-color-primary-light: 0 255 0;
-  --oui-color-primary-darken: 3 255 0;
-  --oui-color-primary-contrast: 25 13 28;
-
-  --oui-color-link: 3 255 0;
-  --oui-color-link-light: 77 250 22;
-
+  --oui-color-primary: 0 255 65;
+  --oui-color-primary-light: 0 255 65;
+  --oui-color-primary-darken: 0 255 65;
+  --oui-color-primary-contrast: 0 0 0;
+  --oui-color-link: 0 255 65;
+  --oui-color-link-light: 0 255 65;
   --oui-color-secondary: 255 255 255;
   --oui-color-tertiary: 218 218 218;
   --oui-color-quaternary: 218 218 218;
-
   --oui-color-danger: 230 46 26;
   --oui-color-danger-light: 230 46 26;
   --oui-color-danger-darken: 230 46 26;
   --oui-color-danger-contrast: 255 255 255;
-
-  --oui-color-success: 3 255 0;
-  --oui-color-success-light: 3 255 0;
-  --oui-color-success-darken: 3 255 0;
+  --oui-color-success: 0 255 65;
+  --oui-color-success-light: 0 255 65;
+  --oui-color-success-darken: 0 255 65;
   --oui-color-success-contrast: 255 255 255;
-
   --oui-color-warning: 255 209 70;
   --oui-color-warning-light: 255 229 133;
   --oui-color-warning-darken: 230 46 26;
   --oui-color-warning-contrast: 255 255 255;
-
   --oui-color-fill: 36 32 47;
   --oui-color-fill-active: 40 46 58;
-
   --oui-color-base-1: 93 83 123;
   --oui-color-base-2: 81 72 107;
   --oui-color-base-3: 68 61 69;
@@ -42,41 +34,31 @@
   --oui-color-base-7: 36 32 47;
   --oui-color-base-8: 29 26 38;
   --oui-color-base-9: 22 20 28;
-  --oui-color-base-10: 14 13 18;
-
+  --oui-color-base-10: 8 8 8;
   --oui-color-base-foreground: 255 255 255;
-  --oui-color-line: 255 255 255;
-
+  --oui-color-line: 0 255 65;
   --oui-color-trading-loss: 230 46 27;
   --oui-color-trading-loss-contrast: 255 255 255;
-  --oui-color-trading-profit: 3 255 0;
+  --oui-color-trading-profit: 0 255 65;
   --oui-color-trading-profit-contrast: 255 255 255;
-
   /* gradients */
-  --oui-gradient-primary-start: 40 0 97;
-  --oui-gradient-primary-end: 189 107 237;
-
-  --oui-gradient-secondary-start: 0 255 0;
-  --oui-gradient-secondary-end: 0 255 0;
-
+  --oui-gradient-primary-start: 0 255 65;
+  --oui-gradient-primary-end: 0 255 65;
+  --oui-gradient-secondary-start: 0 255 65;
+  --oui-gradient-secondary-end: 0 255 65;
   --oui-gradient-success-start: 1 83 68;
   --oui-gradient-success-end: 41 223 169;
-
   --oui-gradient-danger-start: 153 24 76;
   --oui-gradient-danger-end: 245 97 139;
-
-  --oui-gradient-brand-start: 0 255 0;
-  --oui-gradient-brand-end: 0 255 0;
+  --oui-gradient-brand-start: 0 255 65;
+  --oui-gradient-brand-end: 0 255 65;
   --oui-gradient-brand-stop-start: 16.62%;
   --oui-gradient-brand-stop-end: 99.5%;
   --oui-gradient-brand-angle: 17.44deg;
-
   --oui-gradient-warning-start: 152 58 8;
   --oui-gradient-warning-end: 255 209 70;
-
-  --oui-gradient-neutral-start: 27 29 24;
-  --oui-gradient-neutral-end: 38 41 46;
-
+  --oui-gradient-neutral-start: 8 8 8;
+  --oui-gradient-neutral-end: 8 8 8;
   /* rounded */
   --oui-rounded-sm: 0px;
   --oui-rounded: 0px;
@@ -85,7 +67,6 @@
   --oui-rounded-xl: 0px;
   --oui-rounded-2xl: 0px;
   --oui-rounded-full: 9999px;
-
   /* spacing */
   --oui-spacing-xs: 20rem;
   --oui-spacing-sm: 22.5rem;
@@ -97,6 +78,7 @@
 html, body {
   font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
   font-size: 16px !important;
+  background: #080808 !important;
 }
 
 .orderly-app-container,
@@ -104,4 +86,33 @@ html, body {
 .orderly-app-container *::before,
 .orderly-app-container *::after {
   font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* HEADER - match home page exactly */
+header, nav,
+[class*="header"],
+[class*="nav"],
+[class*="appbar"],
+[class*="toolbar"],
+[class*="top-bar"],
+[class*="topbar"] {
+  background: rgba(0, 0, 0, 0.88) !important;
+  backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
+}
+
+/* Remove character image from header logo area */
+[class*="logo"] img,
+[class*="header"] img:not([alt*="token"]):not([alt*="coin"]):not([alt*="icon"]) {
+  display: none !important;
+}
+
+/* Logo text styling to match home page */
+[class*="logo"] {
+  font-family: 'Orbitron', monospace !important;
+  font-weight: 900 !important;
+  font-size: 1.5rem !important;
+  letter-spacing: 0.2em !important;
+  color: #00ff41 !important;
+  text-shadow: 0 0 20px #00ff41 !important;
 }
