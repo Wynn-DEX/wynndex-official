@@ -4,12 +4,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 /* hide trading rewards on mobile */
 .oui-portfolio-page .oui-box.oui-flex.oui-flex-nowrap>div:nth-child(2).oui-box.oui-flex.oui-justify-start.oui-flex-nowrap.oui-relative {
   display: none;
 }
-
 /* HEADER - solid black matching wynndex.io home page */
 .oui-scaffold-root .oui-scaffold-topNavbar>header {
   height: 88px;
@@ -18,20 +16,17 @@
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   box-shadow: none !important;
-  border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
+  border-bottom: none !important;
 }
-
 .oui-scaffold-root .oui-scaffold-topNavbar>header a>img {
   height: 85px !important;
   width: auto !important;
   max-width: none !important;
   flex-shrink: 0;
 }
-
 .oui-scaffold-root .oui-scaffold-topNavbar>header a:has(> img[alt="logo"]) {
   flex-shrink: 0;
 }
-
 @media (min-width: 1024px) {
   /* Apply white to nav links and spans but NOT to the logo spans */
   .oui-scaffold-root .oui-scaffold-topNavbar>header a:not(:first-of-type),
@@ -42,11 +37,9 @@
     color: inherit !important;
   }
 }
-
 .oui-main-nav button[data-actived] {
   transition: background-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
 }
-
 .oui-main-nav button[data-actived]:hover,
 .oui-main-nav button[data-actived]:focus-visible {
   background: rgba(0, 255, 65, 0.12) !important;
@@ -56,14 +49,12 @@
     inset 0 0 12px rgba(0, 255, 65, 0.12);
   color: rgb(0, 255, 65) !important;
 }
-
 .oui-main-nav button[data-actived]:hover span,
 .oui-main-nav button[data-actived]:focus-visible span {
   text-shadow:
     0 0 6px rgba(0, 255, 65, 0.85),
     0 0 14px rgba(0, 255, 65, 0.45);
 }
-
 /* MOBILE HEADER - solid black matching wynndex.io home page */
 @media (max-width: 1023px) {
   .oui-scaffold-root.oui-w-full>header {
@@ -73,16 +64,14 @@
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     box-shadow: none !important;
-    border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
+    border-bottom: none !important;
   }
-
   .oui-scaffold-root.oui-w-full>header img[alt="logo"] {
     height: 58px !important;
     width: auto !important;
     max-width: none !important;
     flex-shrink: 0;
   }
-
   .oui-scaffold-root.oui-w-full>header a:has(> img[alt="logo"]) {
     flex-shrink: 0;
   }
