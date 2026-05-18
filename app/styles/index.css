@@ -12,22 +12,31 @@
 .oui-scaffold-root .oui-scaffold-topNavbar>header {
   height: 64px !important;
   min-height: 64px !important;
-  background: #000000 !important;
+  background: rgba(0, 0, 0, 0.88) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   box-shadow: none !important;
   border-bottom: none !important;
   display: flex !important;
   align-items: center !important;
+  padding: 0 3rem !important;
 }
 .oui-scaffold-root .oui-scaffold-topNavbar>header a>img {
-  height: 40px !important;
+  height: 32px !important;
   width: auto !important;
   max-width: none !important;
   flex-shrink: 0;
 }
 .oui-scaffold-root .oui-scaffold-topNavbar>header a:has(> img[alt="logo"]) {
   flex-shrink: 0;
+}
+/* Nav link styles matching home page */
+.oui-main-nav button,
+.oui-main-nav a {
+  font-size: 0.75rem !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  font-family: 'Share Tech Mono', monospace !important;
 }
 @media (min-width: 1024px) {
   /* Apply white to nav links and spans but NOT to the logo spans */
@@ -62,16 +71,17 @@
   .oui-scaffold-root.oui-w-full>header {
     height: 60px !important;
     min-height: 60px !important;
-    background: #000000 !important;
+    background: rgba(0, 0, 0, 0.88) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     box-shadow: none !important;
     border-bottom: none !important;
     display: flex !important;
     align-items: center !important;
+    padding: 0 1rem !important;
   }
   .oui-scaffold-root.oui-w-full>header img[alt="logo"] {
-    height: 36px !important;
+    height: 32px !important;
     width: auto !important;
     max-width: none !important;
     flex-shrink: 0;
