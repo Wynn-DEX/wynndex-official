@@ -81,8 +81,6 @@ const getCustomMenuItems = (): MainNavItem[] => {
   }
 
   try {
-    // Parse delimiter-separated menu items
-    // Expected format: "Documentation,https://docs.example.com;Blog,https://blog.example.com;Support,https://support.example.com"
     const menuPairs = customMenusEnv
       .split(";")
       .map((pair) => pair.trim())
@@ -229,6 +227,24 @@ const getColorConfig = (): ColorConfigInterface | undefined => {
   }
 };
 
+// Text logo matching wynndex.io home page exactly
+const WynnDEXLogo = () => (
+  <span
+    style={{
+      fontFamily: "'Orbitron', monospace",
+      fontWeight: 900,
+      fontSize: "1.4rem",
+      letterSpacing: "0.15em",
+      color: "#00ff41",
+      textShadow: "0 0 20px #00ff41",
+      textDecoration: "none",
+      userSelect: "none",
+    }}
+  >
+    Wynn<span style={{ color: "#ffffff" }}>DEX</span>
+  </span>
+);
+
 export const useOrderlyConfig = () => {
   const { t } = useTranslation();
   const { isMobile } = useScreen();
@@ -269,7 +285,6 @@ export const useOrderlyConfig = () => {
           );
         },
       },
-
       { id: "Rewards", href: "/rewards", name: t("tradingRewards.rewards") },
       { id: "Vaults", href: "/vaults", name: t("common.vaults") },
       {
@@ -338,7 +353,16 @@ export const useOrderlyConfig = () => {
 
     mainNavProps.customRender = (components) => {
       return (
-        <Flex justify="between" className="oui-w-full">
+        <Flex
+          justify="between"
+          className="oui-w-full"
+          style={{
+            background: "rgba(0,0,0,0.88)",
+            backdropFilter: "blur(16px)",
+            borderBottom: "1px solid rgba(0,255,65,0.2)",
+            padding: "0 2rem",
+          }}
+        >
           <Flex
             itemAlign={"center"}
             className={cn("oui-gap-3", "oui-overflow-hidden")}
@@ -349,17 +373,8 @@ export const useOrderlyConfig = () => {
                 externalLinks={externalCustomMenus}
               />
             )}
-            <Link to="/">
-              {isMobile &&
-                getRuntimeConfigBoolean("VITE_HAS_SECONDARY_LOGO") ? (
-                <img
-                  src={withBasePath("/logo-secondary.webp")}
-                  alt="logo"
-                  style={{ height: "32px" }}
-                />
-              ) : (
-                components.title
-              )}
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <WynnDEXLogo />
             </Link>
             {components.mainNav}
           </Flex>
@@ -390,7 +405,7 @@ export const useOrderlyConfig = () => {
           trailing: (
             <span className="oui-text-2xs oui-text-base-contrast-54">
               Charts powered by{" "}
-              <a
+              
                 href="https://tradingview.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -403,17 +418,9 @@ export const useOrderlyConfig = () => {
       },
       orderlyAppProvider: {
         appIcons: {
-          main: getRuntimeConfigBoolean("VITE_HAS_PRIMARY_LOGO")
-            ? {
-              component: (
-                <img
-                  src={withBasePath("/logo.webp")}
-                  alt="logo"
-                  style={{ height: "85px" }}
-                />
-              ),
-            }
-            : { img: withBasePath("/orderly-logo.svg") },
+          main: {
+            component: <WynnDEXLogo />,
+          },
           secondary: {
             img: getRuntimeConfigBoolean("VITE_HAS_SECONDARY_LOGO")
               ? withBasePath("/logo-secondary.webp")
@@ -436,7 +443,6 @@ export const useOrderlyConfig = () => {
           profitColor: "rgba(41, 223, 169, 1)",
           lossColor: "rgba(245, 97, 139, 1)",
           brandColor: "rgba(255, 255, 255, 0.98)",
-          // ref
           refLink:
             typeof window !== "undefined" ? window.location.origin : undefined,
           refSlogan:
