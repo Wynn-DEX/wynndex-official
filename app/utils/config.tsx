@@ -72,11 +72,7 @@ export type OrderlyConfig = {
 const getCustomMenuItems = (): MainNavItem[] => {
   const customMenusEnv = getRuntimeConfig("VITE_CUSTOM_MENUS");
 
-  if (
-    !customMenusEnv ||
-    typeof customMenusEnv !== "string" ||
-    customMenusEnv.trim() === ""
-  ) {
+  if (!customMenusEnv || typeof customMenusEnv !== "string" || customMenusEnv.trim() === "") {
     return [];
   }
 
@@ -92,10 +88,7 @@ const getCustomMenuItems = (): MainNavItem[] => {
       const [name, href] = pair.split(",").map((item) => item.trim());
 
       if (!name || !href) {
-        console.warn(
-          "Invalid custom menu item format. Expected 'name,url':",
-          pair
-        );
+        console.warn("Invalid custom menu item format. Expected 'name,url':", pair);
         continue;
       }
 
@@ -119,11 +112,7 @@ const getEnabledMenus = (
 ) => {
   const enabledMenusEnv = getRuntimeConfig("VITE_ENABLED_MENUS");
 
-  if (
-    !enabledMenusEnv ||
-    typeof enabledMenusEnv !== "string" ||
-    enabledMenusEnv.trim() === ""
-  ) {
+  if (!enabledMenusEnv || typeof enabledMenusEnv !== "string" || enabledMenusEnv.trim() === "") {
     return defaultEnabledMenus;
   }
 
@@ -149,9 +138,7 @@ const getPnLBackgroundImages = (): string[] => {
   const useCustomPnL = getRuntimeConfigBoolean("VITE_USE_CUSTOM_PNL_POSTERS");
 
   if (useCustomPnL) {
-    const customPnLCount = getRuntimeConfigNumber(
-      "VITE_CUSTOM_PNL_POSTER_COUNT"
-    );
+    const customPnLCount = getRuntimeConfigNumber("VITE_CUSTOM_PNL_POSTER_COUNT");
 
     if (isNaN(customPnLCount) || customPnLCount < 1) {
       return [
@@ -206,15 +193,9 @@ const getBottomNavIcon = (menuId: string) => {
 };
 
 const getColorConfig = (): ColorConfigInterface | undefined => {
-  const customColorConfigEnv = getRuntimeConfig(
-    "VITE_TRADING_VIEW_COLOR_CONFIG"
-  );
+  const customColorConfigEnv = getRuntimeConfig("VITE_TRADING_VIEW_COLOR_CONFIG");
 
-  if (
-    !customColorConfigEnv ||
-    typeof customColorConfigEnv !== "string" ||
-    customColorConfigEnv.trim() === ""
-  ) {
+  if (!customColorConfigEnv || typeof customColorConfigEnv !== "string" || customColorConfigEnv.trim() === "") {
     return undefined;
   }
 
@@ -227,7 +208,6 @@ const getColorConfig = (): ColorConfigInterface | undefined => {
   }
 };
 
-// Text logo matching wynndex.io home page exactly
 const WynnDEXLogo = () => (
   <span
     style={{
@@ -279,9 +259,7 @@ export const useOrderlyConfig = () => {
         target: "_blank",
         customRender: () => {
           return (
-            <CampaignsNavTitle
-              title={t("extend.tradingLeaderboard.campaigns")}
-            />
+            <CampaignsNavTitle title={t("extend.tradingLeaderboard.campaigns")} />
           );
         },
       },
@@ -295,7 +273,6 @@ export const useOrderlyConfig = () => {
     ];
 
     const defaultEnabledMenus = allMenuItems.filter((menu) => menu.isDefault);
-
     const enabledMenus = getEnabledMenus(allMenuItems, defaultEnabledMenus);
     const customMenus = getCustomMenuItems();
     const internalCustomMenus = customMenus.filter((menu) => !menu.target);
@@ -310,12 +287,7 @@ export const useOrderlyConfig = () => {
 
     const allMainMenus = [...translatedEnabledMenus, ...customMenus];
 
-    const supportedBottomNavMenus = [
-      "Trading",
-      "Portfolio",
-      "Markets",
-      "Leaderboard",
-    ];
+    const supportedBottomNavMenus = ["Trading", "Portfolio", "Markets", "Leaderboard"];
     const bottomNavMenus = enabledMenus
       .filter((menu) => supportedBottomNavMenus.includes(menu.id))
       .map((menu) => {
@@ -363,10 +335,7 @@ export const useOrderlyConfig = () => {
             padding: "0 2rem",
           }}
         >
-          <Flex
-            itemAlign={"center"}
-            className={cn("oui-gap-3", "oui-overflow-hidden")}
-          >
+          <Flex itemAlign={"center"} className={cn("oui-gap-3", "oui-overflow-hidden")}>
             {isMobile && (
               <CustomLeftNav
                 menus={[...translatedEnabledMenus, ...internalCustomMenus]}
@@ -404,14 +373,8 @@ export const useOrderlyConfig = () => {
           twitterUrl: getRuntimeConfig("VITE_TWITTER_URL") || undefined,
           trailing: (
             <span className="oui-text-2xs oui-text-base-contrast-54">
-              Charts powered by{" "}
-              
-                href="https://tradingview.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                TradingView
-              </a>
+              {"Charts powered by "}
+              <a href="https://tradingview.com" target="_blank" rel="noopener noreferrer">TradingView</a>
             </span>
           ),
         },
@@ -430,9 +393,7 @@ export const useOrderlyConfig = () => {
       },
       tradingPage: {
         tradingViewConfig: {
-          scriptSRC: withBasePath(
-            "/tradingview/charting_library/charting_library.js"
-          ),
+          scriptSRC: withBasePath("/tradingview/charting_library/charting_library.js"),
           library_path: withBasePath("/tradingview/charting_library/"),
           customCssUrl: withBasePath("/tradingview/chart.css"),
           colorConfig: getColorConfig(),
@@ -443,10 +404,8 @@ export const useOrderlyConfig = () => {
           profitColor: "rgba(41, 223, 169, 1)",
           lossColor: "rgba(245, 97, 139, 1)",
           brandColor: "rgba(255, 255, 255, 0.98)",
-          refLink:
-            typeof window !== "undefined" ? window.location.origin : undefined,
-          refSlogan:
-            getRuntimeConfig("VITE_ORDERLY_BROKER_NAME") || "Orderly Network",
+          refLink: typeof window !== "undefined" ? window.location.origin : undefined,
+          refSlogan: getRuntimeConfig("VITE_ORDERLY_BROKER_NAME") || "Orderly Network",
         },
       },
     };
