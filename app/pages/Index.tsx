@@ -142,7 +142,7 @@ export default function Index() {
           ].map(([icon,title,desc])=>(
             <div key={title as string} style={{background:"rgba(0,255,65,0.04)",border:"1px solid rgba(0,255,65,0.2)",padding:"2rem",clipPath:"polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)"}}>
               <div style={{fontSize:"1.8rem",marginBottom:"1rem"}}>{icon}</div>
-              <div style={{fontFamily:"'Orbitron',monospace",fontSize:"0.82rem",fontWeight:700,color:"#fff",marginBottom:"0.8rem",letterSpacing:"0.08em"}}>{title}</div>
+              <div style={{fontFamily:"'Orbitron',monospace",fontSize:"1rem",fontWeight:700,color:"#00ff41",marginBottom:"0.8rem",letterSpacing:"0.08em",textShadow:"0 0 10px rgba(0,255,65,0.4)"}}>{title}</div>
               <p style={{fontSize:"0.77rem",lineHeight:1.9,color:"#ffffff"}}>{desc}</p>
             </div>
           ))}
