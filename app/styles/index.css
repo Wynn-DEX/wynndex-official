@@ -33,9 +33,9 @@
 }
 
 @media (min-width: 1024px) {
-  .oui-scaffold-root .oui-scaffold-topNavbar>header,
-  .oui-scaffold-root .oui-scaffold-topNavbar>header a,
-  .oui-scaffold-root .oui-scaffold-topNavbar>header span {
+  /* Apply white to nav links and spans but NOT to the logo spans */
+  .oui-scaffold-root .oui-scaffold-topNavbar>header a:not(:first-of-type),
+  .oui-scaffold-root .oui-scaffold-topNavbar>header span:not([style]) {
     color: #ffffff !important;
   }
   .oui-scaffold-root .oui-scaffold-topNavbar>header button[data-testid="oui-testid-nav-bar-address-btn"] span {
