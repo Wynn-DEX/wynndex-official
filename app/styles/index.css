@@ -18,7 +18,29 @@
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   box-shadow: none !important;
-  border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
+  border: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+/* Remove ALL green lines from header */
+.oui-scaffold-root .oui-scaffold-topNavbar,
+.oui-scaffold-root .oui-scaffold-topNavbar * {
+  border-bottom: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Remove active underline from nav items */
+.oui-main-nav button[data-actived],
+.oui-main-nav button[data-actived]::after,
+.oui-main-nav button[data-actived]::before,
+.oui-main-nav a[data-actived],
+.oui-main-nav a[data-actived]::after,
+.oui-main-nav a[data-actived]::before {
+  border-bottom: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
 }
 
 .oui-scaffold-root .oui-scaffold-topNavbar>header a>img {
@@ -44,7 +66,7 @@
 }
 
 .oui-main-nav button[data-actived] {
-  transition: background-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
 .oui-main-nav button[data-actived]:hover,
@@ -73,7 +95,8 @@
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     box-shadow: none !important;
-    border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
+    border: none !important;
+    border-bottom: none !important;
   }
 
   .oui-scaffold-root.oui-w-full>header img[alt="logo"] {
