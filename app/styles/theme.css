@@ -88,7 +88,7 @@ html, body {
   font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
-/* HEADER - match home page exactly */
+/* HEADER - solid black, no transparency, no matrix bleed */
 header, nav,
 [class*="header"],
 [class*="nav"],
@@ -96,9 +96,27 @@ header, nav,
 [class*="toolbar"],
 [class*="top-bar"],
 [class*="topbar"] {
-  background: rgba(0, 0, 0, 0.88) !important;
-  backdrop-filter: blur(16px) !important;
+  background: #000000 !important;
+  background-color: #000000 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
+  position: relative !important;
+  z-index: 1000 !important;
+  isolation: isolate !important;
+}
+
+/* Force header wrapper to be fully opaque */
+[class*="oui-h-"][class*="header"],
+[class*="scaffold"],
+[class*="main-nav"],
+[class*="mainNav"],
+[class*="top-nav"],
+[class*="topNav"] {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  z-index: 1000 !important;
+  isolation: isolate !important;
 }
 
 /* Remove character image from header logo area */
