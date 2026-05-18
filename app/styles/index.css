@@ -14,10 +14,11 @@
 .oui-scaffold-root .oui-scaffold-topNavbar>header {
   height: 88px;
   min-height: 88px;
-  background: rgba(0, 0, 0, 0.88) !important;
+  background: #000000 !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
-  box-shadow: inset 0 -1px 0 rgba(0, 255, 65, 0.2) !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
 }
 
 .oui-scaffold-root .oui-scaffold-topNavbar>header a>img {
@@ -68,10 +69,11 @@
   .oui-scaffold-root.oui-w-full>header {
     height: 60px !important;
     min-height: 60px !important;
-    background: rgba(0, 0, 0, 0.88) !important;
+    background: #000000 !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
-    box-shadow: inset 0 -1px 0 rgba(0, 255, 65, 0.2) !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
   }
 
   .oui-scaffold-root.oui-w-full>header img[alt="logo"] {
