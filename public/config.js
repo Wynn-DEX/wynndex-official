@@ -27,7 +27,7 @@ window.__RUNTIME_CONFIG__ = {
   "VITE_TWITTER_URL": "https://x.com/JamesWynnReal",
   "VITE_SEO_SITE_NAME": "WynnDEX",
   "VITE_SEO_SITE_DESCRIPTION": "The best DEX to start wynning",
-  "VITE_SEO_SITE_URL": "https://wynndex.io/",
+  "VITE_SEO_SITE_URL": "https://dex.wynn.io/",
   "VITE_SEO_SITE_LANGUAGE": "en",
   "VITE_SEO_SITE_LOCALE": "en_US",
   "VITE_SEO_TWITTER_HANDLE": "@JamesWynnReal",
