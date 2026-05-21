@@ -38,7 +38,7 @@ export default function Index() {
   useEffect(() => {
     const el = document.getElementById('typewriter');
     if (!el) return;
-    const text = 'dex.wynn.io...';
+    const text = 'dex.wynn.io';
     let i = 0;
     el.innerHTML = '';
     const type = () => {
