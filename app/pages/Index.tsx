@@ -70,21 +70,6 @@ export default function Index() {
       {/* SCANLINES */}
       <div style={{position:"fixed",inset:0,background:"repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.07) 2px,rgba(0,0,0,0.07) 4px)",pointerEvents:"none",zIndex:2}} />
 
-      {/* NAV */}
-      <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:100,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"1rem 3rem",background:"rgba(0,0,0,0.88)",backdropFilter:"blur(16px)",borderBottom:"1px solid rgba(0,255,65,0.2)"}}>
-        <div style={{display:"flex",alignItems:"center",gap:"0.75rem"}}>
-          <span style={{fontFamily:"'Orbitron',monospace",fontWeight:900,fontSize:"1.5rem",letterSpacing:"0.2em",color:"#00ff41",textShadow:"0 0 20px #00ff41"}}>Wynn<span style={{color:"#fff"}}>DEX</span></span>
-          <img src="/logo-icon.png" alt="WynnDEX icon" style={{height:"40px",width:"40px",objectFit:"contain"}} />
-        </div>
-        <div style={{display:"flex",gap:"2rem"}}>
-          <a href="/perp" className="nav-link">Trade</a>
-          <a href="#about" className="nav-link">About</a>
-          <a href="#features" className="nav-link">Features</a>
-          <a href="/about" className="nav-link">About WYNN DEX</a>
-        </div>
-        <a href="/perp" style={{fontFamily:"'Orbitron',monospace",fontSize:"0.7rem",fontWeight:700,letterSpacing:"0.15em",padding:"0.55rem 1.3rem",background:"transparent",border:"1px solid #00ff41",color:"#00ff41",textDecoration:"none",textTransform:"uppercase",clipPath:"polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%)"}}>ENTER DEX 🐇</a>
-      </nav>
-
       {/* HERO */}
       <section id="trade" style={{position:"relative",zIndex:10,minHeight:"100vh",display:"grid",gridTemplateColumns:"1fr 1fr",alignItems:"center",gap:"4rem",padding:"8rem 5rem 5rem",maxWidth:"1400px",margin:"0 auto"}}>
         <div style={{display:"flex",flexDirection:"column",gap:"1.8rem"}}>
@@ -102,16 +87,82 @@ export default function Index() {
           </div>
         </div>
 
-        {/* AVATAR */}
+        {/* VAULT LOGO */}
         <div style={{position:"relative",display:"flex",justifyContent:"center",alignItems:"center"}}>
           <div style={{position:"relative",width:"400px",height:"400px"}}>
-            <div style={{position:"absolute",inset:"-38px",border:"1px solid rgba(0,255,65,0.1)",borderRadius:"50%",animation:"spin 22s linear infinite reverse"}} />
-            <div style={{position:"absolute",inset:"-20px",border:"1px solid rgba(0,255,65,0.25)",borderRadius:"50%",animation:"spin 12s linear infinite"}} />
-            <img src="/avatar.jpeg" alt="James Wynn" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"50%",border:"2px solid rgba(0,255,65,0.3)",boxShadow:"0 0 50px rgba(0,255,65,0.15)"}} />
+
+            {/* Outer vault ring — slow rotation */}
+            <div style={{
+              position:"absolute",inset:"-50px",
+              borderRadius:"50%",
+              border:"2px solid rgba(0,255,65,0.15)",
+              boxShadow:"0 0 30px rgba(0,255,65,0.05),inset 0 0 30px rgba(0,255,65,0.05)",
+              animation:"spin 30s linear infinite reverse"
+            }} />
+
+            {/* Vault tick marks ring */}
+            <div style={{
+              position:"absolute",inset:"-36px",
+              borderRadius:"50%",
+              border:"1px dashed rgba(0,255,65,0.2)",
+              animation:"spin 20s linear infinite"
+            }} />
+
+            {/* Inner ring — counter rotate */}
+            <div style={{
+              position:"absolute",inset:"-18px",
+              borderRadius:"50%",
+              border:"1px solid rgba(0,255,65,0.35)",
+              boxShadow:"0 0 15px rgba(0,255,65,0.1)",
+              animation:"spin 10s linear infinite reverse"
+            }} />
+
+            {/* Vault dial notches */}
+            <div style={{
+              position:"absolute",inset:"-18px",
+              borderRadius:"50%",
+              background:"repeating-conic-gradient(rgba(0,255,65,0.08) 0deg 2deg, transparent 2deg 30deg)",
+              animation:"spin 10s linear infinite reverse"
+            }} />
+
+            {/* Logo circle — glowing vault door */}
+            <div style={{
+              position:"absolute",inset:0,
+              borderRadius:"50%",
+              background:"radial-gradient(circle at 35% 35%, rgba(0,40,15,0.95) 0%, rgba(0,0,0,0.98) 70%)",
+              border:"2px solid rgba(0,255,65,0.4)",
+              boxShadow:"0 0 40px rgba(0,255,65,0.2),0 0 80px rgba(0,255,65,0.08),inset 0 0 40px rgba(0,255,65,0.05)",
+              display:"flex",
+              alignItems:"center",
+              justifyContent:"center",
+              overflow:"hidden"
+            }}>
+              <img
+                src="/logo-icon.png"
+                alt="WynnDEX"
+                style={{
+                  width:"65%",
+                  height:"65%",
+                  objectFit:"contain",
+                  filter:"drop-shadow(0 0 12px rgba(0,255,65,0.8)) drop-shadow(0 0 30px rgba(0,255,65,0.4))",
+                }}
+              />
+            </div>
+
+            {/* Vault bolt — top */}
+            <div style={{position:"absolute",top:"-6px",left:"50%",transform:"translateX(-50%)",width:"12px",height:"12px",borderRadius:"50%",background:"rgba(0,255,65,0.5)",boxShadow:"0 0 8px rgba(0,255,65,0.6)"}} />
+            {/* Vault bolt — bottom */}
+            <div style={{position:"absolute",bottom:"-6px",left:"50%",transform:"translateX(-50%)",width:"12px",height:"12px",borderRadius:"50%",background:"rgba(0,255,65,0.5)",boxShadow:"0 0 8px rgba(0,255,65,0.6)"}} />
+            {/* Vault bolt — left */}
+            <div style={{position:"absolute",left:"-6px",top:"50%",transform:"translateY(-50%)",width:"12px",height:"12px",borderRadius:"50%",background:"rgba(0,255,65,0.5)",boxShadow:"0 0 8px rgba(0,255,65,0.6)"}} />
+            {/* Vault bolt — right */}
+            <div style={{position:"absolute",right:"-6px",top:"50%",transform:"translateY(-50%)",width:"12px",height:"12px",borderRadius:"50%",background:"rgba(0,255,65,0.5)",boxShadow:"0 0 8px rgba(0,255,65,0.6)"}} />
+
           </div>
+
           <div style={{position:"absolute",bottom:"-55px",left:"50%",transform:"translateX(-50%)",textAlign:"center",whiteSpace:"nowrap"}}>
-            <div style={{fontFamily:"'Orbitron',monospace",fontSize:"1rem",fontWeight:700,color:"#fff",letterSpacing:"0.15em"}}>JAMES WYNN</div>
-            <div style={{fontSize:"0.62rem",letterSpacing:"0.2em",color:"#00cc33",textTransform:"uppercase",marginTop:"0.25rem"}}>Founder & CEO · WynnDEX</div>
+            <div style={{fontFamily:"'Orbitron',monospace",fontSize:"1rem",fontWeight:700,color:"#fff",letterSpacing:"0.15em"}}>WYNN<span style={{color:"#00ff41"}}>DEX</span></div>
+            <div style={{fontSize:"0.62rem",letterSpacing:"0.2em",color:"#00cc33",textTransform:"uppercase",marginTop:"0.25rem"}}>Non-Custodial · Your Keys · Your Trades</div>
           </div>
         </div>
       </section>
@@ -173,7 +224,7 @@ export default function Index() {
           </div>
         </div>
         <div style={{position:"relative",display:"flex",justifyContent:"center"}}>
-          <img src="/avatar.jpeg" alt="James Wynn" style={{width:"100%",maxWidth:"460px",height:"500px",objectFit:"cover",objectPosition:"top",border:"1px solid rgba(0,255,65,0.2)",clipPath:"polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,30px 100%,0 calc(100% - 30px))"}} />
+          <img src="/wynn-avatar.jpeg" alt="James Wynn" style={{width:"100%",maxWidth:"460px",height:"500px",objectFit:"cover",objectPosition:"top",border:"1px solid rgba(0,255,65,0.2)",clipPath:"polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,30px 100%,0 calc(100% - 30px))"}} />
         </div>
       </section>
 
@@ -200,35 +251,6 @@ export default function Index() {
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
-
-        .nav-link {
-          color: #ffffff;
-          text-decoration: none;
-          font-size: 0.75rem;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          position: relative;
-          padding-bottom: 4px;
-          transition: color 0.3s ease, text-shadow 0.3s ease;
-        }
-        .nav-link::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0%;
-          height: 1px;
-          background: #00ff41;
-          box-shadow: 0 0 8px #00ff41;
-          transition: width 0.3s ease;
-        }
-        .nav-link:hover {
-          color: #00ff41;
-          text-shadow: 0 0 10px #00ff41, 0 0 20px rgba(0,255,65,0.5);
-        }
-        .nav-link:hover::after {
-          width: 100%;
-        }
 
         .footer-link {
           font-size: 0.62rem;
