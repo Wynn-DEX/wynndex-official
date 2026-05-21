@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 
 export default function Index() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const particleCanvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -51,9 +52,138 @@ export default function Index() {
     return () => clearTimeout(timer);
   }, []);
 
+  // PARTICLE BURST — energy bolts from vault
+  useEffect(() => {
+    const canvas = particleCanvasRef.current!;
+    const ctx = canvas.getContext("2d")!;
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener("resize", resize);
+
+    interface Particle {
+      x: number; y: number;
+      vx: number; vy: number;
+      life: number; maxLife: number;
+      size: number; type: 'bolt' | 'spark' | 'ring';
+      angle?: number; radius?: number;
+    }
+
+    let particles: Particle[] = [];
+    let animFrame: number;
+
+    function getVaultCenter() {
+      // Vault is right half of a 1400px max container, centered on screen
+      const vw = window.innerWidth;
+      const containerWidth = Math.min(vw, 1400);
+      const left = (vw - containerWidth) / 2;
+      const x = left + containerWidth * 0.75;
+      const y = window.innerHeight * 0.5;
+      return { x, y };
+    }
+
+    function burst() {
+      const { x, y } = getVaultCenter();
+      const count = 28;
+
+      // Ring pulse
+      particles.push({ x, y, vx: 0, vy: 0, life: 0, maxLife: 60, size: 0, type: 'ring', radius: 0 });
+
+      for (let i = 0; i < count; i++) {
+        const angle = (i / count) * Math.PI * 2;
+        const speed = Math.random() * 6 + 3;
+        particles.push({
+          x, y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          life: 0,
+          maxLife: Math.random() * 40 + 30,
+          size: Math.random() * 2.5 + 1,
+          type: Math.random() > 0.4 ? 'bolt' : 'spark',
+          angle,
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles = particles.filter(p => p.life < p.maxLife);
+
+      particles.forEach(p => {
+        const progress = p.life / p.maxLife;
+        const alpha = 1 - progress;
+
+        if (p.type === 'ring') {
+          const r = progress * 220;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(0,255,65,${0.6 * (1 - progress)})`;
+          ctx.lineWidth = 2 * (1 - progress);
+          ctx.stroke();
+        } else if (p.type === 'bolt') {
+          // Draw lightning bolt trail
+          const len = 18 * (1 - progress * 0.5);
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          // Jagged bolt
+          const mx = p.x - p.vx * len * 0.4 + (Math.random() - 0.5) * 8;
+          const my = p.y - p.vy * len * 0.4 + (Math.random() - 0.5) * 8;
+          ctx.lineTo(mx, my);
+          ctx.lineTo(p.x - p.vx * len, p.y - p.vy * len);
+          ctx.strokeStyle = `rgba(0,255,65,${alpha * 0.9})`;
+          ctx.lineWidth = p.size;
+          ctx.shadowColor = "#00ff41";
+          ctx.shadowBlur = 8;
+          ctx.stroke();
+          ctx.shadowBlur = 0;
+        } else {
+          // Spark dot
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size * (1 - progress * 0.5), 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${progress > 0.5 ? '255,255,255' : '0,255,65'},${alpha})`;
+          ctx.shadowColor = "#00ff41";
+          ctx.shadowBlur = 6;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+
+        p.x += p.vx * (1 - progress * 0.6);
+        p.y += p.vy * (1 - progress * 0.6);
+        p.life++;
+      });
+
+      animFrame = requestAnimationFrame(draw);
+    }
+
+    draw();
+
+    // Fire burst every 4 seconds, first one after 2s
+    const firstBurst = setTimeout(() => {
+      burst();
+      const interval = setInterval(burst, 4000);
+      return () => clearInterval(interval);
+    }, 2000);
+
+    // Also fire on vault hover via custom event
+    const handleBurst = () => burst();
+    window.addEventListener("vaultBurst", handleBurst);
+
+    return () => {
+      cancelAnimationFrame(animFrame);
+      clearTimeout(firstBurst);
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("vaultBurst", handleBurst);
+    };
+  }, []);
+
   return (
     <div style={{background:"#080808",color:"#00ff41",fontFamily:"'Share Tech Mono',monospace",overflowX:"hidden",minHeight:"100vh"}}>
       <canvas ref={canvasRef} style={{position:"fixed",top:0,left:0,width:"100%",height:"100%",zIndex:0,opacity:0.22,pointerEvents:"none"}} />
+      <canvas ref={particleCanvasRef} style={{position:"fixed",top:0,left:0,width:"100%",height:"100%",zIndex:3,pointerEvents:"none"}} />
 
       {/* SCANLINES */}
       <div style={{position:"fixed",inset:0,background:"repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.07) 2px,rgba(0,0,0,0.07) 4px)",pointerEvents:"none",zIndex:2}} />
@@ -61,8 +191,8 @@ export default function Index() {
       {/* HERO */}
       <section id="trade" style={{position:"relative",zIndex:10,minHeight:"100vh",display:"grid",gridTemplateColumns:"1fr 1fr",alignItems:"center",gap:"4rem",padding:"8rem 5rem 5rem",maxWidth:"1400px",margin:"0 auto"}}>
         <div style={{display:"flex",flexDirection:"column",gap:"1.8rem"}}>
-          <div style={{fontSize:"0.85rem",letterSpacing:"0.35em",color:"#00cc33",textTransform:"uppercase",fontFamily:"'Share Tech Mono',monospace"}} id="typewriter"></div>
-          <h1 style={{fontFamily:"'Orbitron',monospace",fontSize:"clamp(2.2rem,4.5vw,3.8rem)",fontWeight:900,lineHeight:1.05,color:"#fff"}}>
+          <div style={{fontSize:"1.06rem",letterSpacing:"0.35em",color:"#00cc33",textTransform:"uppercase",fontFamily:"'Share Tech Mono',monospace"}} id="typewriter"></div>
+          <h1 style={{fontFamily:"'Orbitron',monospace",fontSize:"clamp(2.8rem,5.5vw,4.8rem)",fontWeight:900,lineHeight:1.05,color:"#fff"}}>
             TRADE WITHOUT<br/>
             <span style={{color:"#00ff41",textShadow:"0 0 20px #00ff41,0 0 50px rgba(0,255,65,0.4)"}}>LIMITS</span>
           </h1>
@@ -78,7 +208,10 @@ export default function Index() {
         </div>
 
         {/* VAULT LOGO */}
-        <div style={{position:"relative",display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <div
+          style={{position:"relative",display:"flex",justifyContent:"center",alignItems:"center"}}
+          onMouseEnter={() => window.dispatchEvent(new Event("vaultBurst"))}
+        >
           <div style={{position:"relative",width:"400px",height:"400px"}}>
             <div style={{position:"absolute",inset:"-50px",borderRadius:"50%",border:"2px solid rgba(0,255,65,0.15)",boxShadow:"0 0 30px rgba(0,255,65,0.05),inset 0 0 30px rgba(0,255,65,0.05)",animation:"spin 30s linear infinite reverse"}} />
             <div style={{position:"absolute",inset:"-36px",borderRadius:"50%",border:"1px dashed rgba(0,255,65,0.2)",animation:"spin 20s linear infinite"}} />
@@ -174,9 +307,7 @@ export default function Index() {
           color: #00ff41;
           text-shadow: 0 0 10px #00ff41, 0 0 20px rgba(0,255,65,0.5);
         }
-        .footer-link:hover::after {
-          width: 100%;
-        }
+        .footer-link:hover::after { width: 100%; }
 
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
         @keyframes pulse {
