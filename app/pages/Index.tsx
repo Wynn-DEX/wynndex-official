@@ -51,18 +51,6 @@ export default function Index() {
     return () => clearTimeout(timer);
   }, []);
 
-  const tickers = [
-    {name:"BTC/USDC",price:"$78,176",change:"+0.11%",up:true},
-    {name:"ETH/USDC",price:"$2,173",change:"-2.36%",up:false},
-    {name:"SOL/USDC",price:"$86.36",change:"-2.86%",up:false},
-    {name:"BNB/USDC",price:"$598.2",change:"+1.24%",up:true},
-    {name:"ARB/USDC",price:"$0.412",change:"+3.15%",up:true},
-    {name:"WIF/USDC",price:"$1.234",change:"+5.32%",up:true},
-    {name:"PEPE/USDC",price:"$0.000012",change:"+8.14%",up:true},
-    {name:"DOGE/USDC",price:"$0.172",change:"-1.44%",up:false},
-  ];
-  const doubled = [...tickers,...tickers,...tickers,...tickers];
-
   return (
     <div style={{background:"#080808",color:"#00ff41",fontFamily:"'Share Tech Mono',monospace",overflowX:"hidden",minHeight:"100vh"}}>
       <canvas ref={canvasRef} style={{position:"fixed",top:0,left:0,width:"100%",height:"100%",zIndex:0,opacity:0.22,pointerEvents:"none"}} />
@@ -110,19 +98,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
-      {/* TICKER */}
-      <div style={{position:"relative",zIndex:10,background:"rgba(0,0,0,0.92)",borderTop:"1px solid rgba(0,255,65,0.2)",borderBottom:"1px solid rgba(0,255,65,0.2)",overflow:"hidden",padding:"0.65rem 0"}}>
-        <div style={{display:"flex",gap:"4rem",animation:"ticker 35s linear infinite",whiteSpace:"nowrap"}}>
-          {doubled.map((t,i)=>(
-            <div key={i} style={{display:"flex",alignItems:"center",gap:"0.6rem",fontSize:"0.75rem",color:"rgba(0,255,65,0.65)"}}>
-              <span style={{color:"#fff"}}>{t.name}</span>
-              <span>{t.price}</span>
-              <span style={{color:t.up?"#00ff41":"#ff4444"}}>{t.up?"▲":"▼"} {t.change}</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* FEATURES */}
       <section id="features" style={{position:"relative",zIndex:10,padding:"4rem 5rem 6rem",maxWidth:"1400px",margin:"0 auto"}}>
@@ -209,7 +184,6 @@ export default function Index() {
           50% { box-shadow:0 0 35px rgba(0,255,65,0.9),0 0 70px rgba(0,255,65,0.5); transform:scale(1.05); }
         }
         @keyframes spin { to { transform:rotate(360deg); } }
-        @keyframes ticker { to { transform:translateX(-50%); } }
       `}</style>
     </div>
   );
