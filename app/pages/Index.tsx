@@ -90,76 +90,18 @@ export default function Index() {
         {/* VAULT LOGO */}
         <div style={{position:"relative",display:"flex",justifyContent:"center",alignItems:"center"}}>
           <div style={{position:"relative",width:"400px",height:"400px"}}>
-
-            {/* Outer vault ring — slow rotation */}
-            <div style={{
-              position:"absolute",inset:"-50px",
-              borderRadius:"50%",
-              border:"2px solid rgba(0,255,65,0.15)",
-              boxShadow:"0 0 30px rgba(0,255,65,0.05),inset 0 0 30px rgba(0,255,65,0.05)",
-              animation:"spin 30s linear infinite reverse"
-            }} />
-
-            {/* Vault tick marks ring */}
-            <div style={{
-              position:"absolute",inset:"-36px",
-              borderRadius:"50%",
-              border:"1px dashed rgba(0,255,65,0.2)",
-              animation:"spin 20s linear infinite"
-            }} />
-
-            {/* Inner ring — counter rotate */}
-            <div style={{
-              position:"absolute",inset:"-18px",
-              borderRadius:"50%",
-              border:"1px solid rgba(0,255,65,0.35)",
-              boxShadow:"0 0 15px rgba(0,255,65,0.1)",
-              animation:"spin 10s linear infinite reverse"
-            }} />
-
-            {/* Vault dial notches */}
-            <div style={{
-              position:"absolute",inset:"-18px",
-              borderRadius:"50%",
-              background:"repeating-conic-gradient(rgba(0,255,65,0.08) 0deg 2deg, transparent 2deg 30deg)",
-              animation:"spin 10s linear infinite reverse"
-            }} />
-
-            {/* Logo circle — glowing vault door */}
-            <div style={{
-              position:"absolute",inset:0,
-              borderRadius:"50%",
-              background:"radial-gradient(circle at 35% 35%, rgba(0,40,15,0.95) 0%, rgba(0,0,0,0.98) 70%)",
-              border:"2px solid rgba(0,255,65,0.4)",
-              boxShadow:"0 0 40px rgba(0,255,65,0.2),0 0 80px rgba(0,255,65,0.08),inset 0 0 40px rgba(0,255,65,0.05)",
-              display:"flex",
-              alignItems:"center",
-              justifyContent:"center",
-              overflow:"hidden"
-            }}>
-              <img
-                src="/logo-icon.png"
-                alt="WynnDEX"
-                style={{
-                  width:"65%",
-                  height:"65%",
-                  objectFit:"contain",
-                  filter:"drop-shadow(0 0 12px rgba(0,255,65,0.8)) drop-shadow(0 0 30px rgba(0,255,65,0.4))",
-                }}
-              />
+            <div style={{position:"absolute",inset:"-50px",borderRadius:"50%",border:"2px solid rgba(0,255,65,0.15)",boxShadow:"0 0 30px rgba(0,255,65,0.05),inset 0 0 30px rgba(0,255,65,0.05)",animation:"spin 30s linear infinite reverse"}} />
+            <div style={{position:"absolute",inset:"-36px",borderRadius:"50%",border:"1px dashed rgba(0,255,65,0.2)",animation:"spin 20s linear infinite"}} />
+            <div style={{position:"absolute",inset:"-18px",borderRadius:"50%",border:"1px solid rgba(0,255,65,0.35)",boxShadow:"0 0 15px rgba(0,255,65,0.1)",animation:"spin 10s linear infinite reverse"}} />
+            <div style={{position:"absolute",inset:"-18px",borderRadius:"50%",background:"repeating-conic-gradient(rgba(0,255,65,0.08) 0deg 2deg, transparent 2deg 30deg)",animation:"spin 10s linear infinite reverse"}} />
+            <div style={{position:"absolute",inset:0,borderRadius:"50%",background:"radial-gradient(circle at 35% 35%, rgba(0,40,15,0.95) 0%, rgba(0,0,0,0.98) 70%)",border:"2px solid rgba(0,255,65,0.4)",boxShadow:"0 0 40px rgba(0,255,65,0.2),0 0 80px rgba(0,255,65,0.08),inset 0 0 40px rgba(0,255,65,0.05)",display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden"}}>
+              <img src="/logo-icon.png" alt="WynnDEX" style={{width:"65%",height:"65%",objectFit:"contain",filter:"drop-shadow(0 0 12px rgba(0,255,65,0.8)) drop-shadow(0 0 30px rgba(0,255,65,0.4))"}} />
             </div>
-
-            {/* Vault bolt — top */}
             <div style={{position:"absolute",top:"-6px",left:"50%",transform:"translateX(-50%)",width:"12px",height:"12px",borderRadius:"50%",background:"rgba(0,255,65,0.5)",boxShadow:"0 0 8px rgba(0,255,65,0.6)"}} />
-            {/* Vault bolt — bottom */}
             <div style={{position:"absolute",bottom:"-6px",left:"50%",transform:"translateX(-50%)",width:"12px",height:"12px",borderRadius:"50%",background:"rgba(0,255,65,0.5)",boxShadow:"0 0 8px rgba(0,255,65,0.6)"}} />
-            {/* Vault bolt — left */}
             <div style={{position:"absolute",left:"-6px",top:"50%",transform:"translateY(-50%)",width:"12px",height:"12px",borderRadius:"50%",background:"rgba(0,255,65,0.5)",boxShadow:"0 0 8px rgba(0,255,65,0.6)"}} />
-            {/* Vault bolt — right */}
             <div style={{position:"absolute",right:"-6px",top:"50%",transform:"translateY(-50%)",width:"12px",height:"12px",borderRadius:"50%",background:"rgba(0,255,65,0.5)",boxShadow:"0 0 8px rgba(0,255,65,0.6)"}} />
-
           </div>
-
           <div style={{position:"absolute",bottom:"-55px",left:"50%",transform:"translateX(-50%)",textAlign:"center",whiteSpace:"nowrap"}}>
             <div style={{fontFamily:"'Orbitron',monospace",fontSize:"1rem",fontWeight:700,color:"#fff",letterSpacing:"0.15em"}}>WYNN<span style={{color:"#00ff41"}}>DEX</span></div>
             <div style={{fontSize:"0.62rem",letterSpacing:"0.2em",color:"#00cc33",textTransform:"uppercase",marginTop:"0.25rem"}}>Non-Custodial · Your Keys · Your Trades</div>
@@ -195,7 +137,7 @@ export default function Index() {
             ["💰","Keep Your Fees","Set your own trading fees. Every trade on WynnDEX generates revenue that flows directly back to you."],
             ["🛡️","Battle-Tested","Built on Orderly Network — powering over $11B in cumulative trading volume across 62+ markets."],
           ].map(([icon,title,desc])=>(
-            <div key={title as string} style={{background:"rgba(0,255,65,0.04)",border:"1px solid rgba(0,255,65,0.2)",padding:"2rem",clipPath:"polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)"}}>
+            <div key={title as string} style={{background:"rgba(0,0,0,0.75)",border:"1px solid rgba(0,255,65,0.2)",padding:"2rem",clipPath:"polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)"}}>
               <div style={{fontSize:"1.8rem",marginBottom:"1rem"}}>{icon}</div>
               <div style={{fontFamily:"'Orbitron',monospace",fontSize:"1rem",fontWeight:700,color:"#00ff41",marginBottom:"0.8rem",letterSpacing:"0.08em",textShadow:"0 0 10px rgba(0,255,65,0.4)"}}>{title}</div>
               <p style={{fontSize:"0.77rem",lineHeight:1.9,color:"#ffffff"}}>{desc}</p>
