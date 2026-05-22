@@ -1,68 +1,68 @@
 :root {
-  --oui-font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
+  --oui-font-family: 'Share Tech Mono', 'Courier New', monospace;
   --oui-font-size-base: 16px;
   /* colors */
-  --oui-color-primary: 0 255 65;
-  --oui-color-primary-light: 0 255 65;
-  --oui-color-primary-darken: 0 255 65;
+  --oui-color-primary: 255 255 255;
+  --oui-color-primary-light: 255 255 255;
+  --oui-color-primary-darken: 200 200 200;
   --oui-color-primary-contrast: 0 0 0;
-  --oui-color-link: 0 255 65;
-  --oui-color-link-light: 0 255 65;
+  --oui-color-link: 255 255 255;
+  --oui-color-link-light: 200 200 200;
   --oui-color-secondary: 255 255 255;
-  --oui-color-tertiary: 218 218 218;
-  --oui-color-quaternary: 218 218 218;
-  --oui-color-danger: 230 46 26;
-  --oui-color-danger-light: 230 46 26;
-  --oui-color-danger-darken: 230 46 26;
-  --oui-color-danger-contrast: 255 255 255;
-  --oui-color-success: 0 255 65;
-  --oui-color-success-light: 0 255 65;
-  --oui-color-success-darken: 0 255 65;
-  --oui-color-success-contrast: 255 255 255;
-  --oui-color-warning: 255 209 70;
-  --oui-color-warning-light: 255 229 133;
-  --oui-color-warning-darken: 230 46 26;
-  --oui-color-warning-contrast: 255 255 255;
-  --oui-color-fill: 36 32 47;
-  --oui-color-fill-active: 40 46 58;
-  --oui-color-base-1: 93 83 123;
-  --oui-color-base-2: 81 72 107;
-  --oui-color-base-3: 68 61 69;
-  --oui-color-base-4: 57 52 74;
-  --oui-color-base-5: 51 46 66;
-  --oui-color-base-6: 43 38 56;
-  --oui-color-base-7: 36 32 47;
-  --oui-color-base-8: 29 26 38;
-  --oui-color-base-9: 22 20 28;
-  --oui-color-base-10: 8 8 8;
+  --oui-color-tertiary: 180 180 180;
+  --oui-color-quaternary: 140 140 140;
+  --oui-color-danger: 255 255 255;
+  --oui-color-danger-light: 220 220 220;
+  --oui-color-danger-darken: 180 180 180;
+  --oui-color-danger-contrast: 0 0 0;
+  --oui-color-success: 255 255 255;
+  --oui-color-success-light: 255 255 255;
+  --oui-color-success-darken: 200 200 200;
+  --oui-color-success-contrast: 0 0 0;
+  --oui-color-warning: 255 255 255;
+  --oui-color-warning-light: 220 220 220;
+  --oui-color-warning-darken: 180 180 180;
+  --oui-color-warning-contrast: 0 0 0;
+  --oui-color-fill: 20 20 20;
+  --oui-color-fill-active: 30 30 30;
+  --oui-color-base-1: 100 100 100;
+  --oui-color-base-2: 80 80 80;
+  --oui-color-base-3: 60 60 60;
+  --oui-color-base-4: 45 45 45;
+  --oui-color-base-5: 35 35 35;
+  --oui-color-base-6: 25 25 25;
+  --oui-color-base-7: 18 18 18;
+  --oui-color-base-8: 12 12 12;
+  --oui-color-base-9: 8 8 8;
+  --oui-color-base-10: 0 0 0;
   --oui-color-base-foreground: 255 255 255;
-  --oui-color-line: 0 255 65;
-  --oui-color-trading-loss: 230 46 27;
-  --oui-color-trading-loss-contrast: 255 255 255;
-  --oui-color-trading-profit: 0 255 65;
-  --oui-color-trading-profit-contrast: 255 255 255;
+  --oui-color-line: 255 255 255;
+  --oui-color-trading-loss: 180 180 180;
+  --oui-color-trading-loss-contrast: 0 0 0;
+  --oui-color-trading-profit: 255 255 255;
+  --oui-color-trading-profit-contrast: 0 0 0;
   /* gradients */
-  --oui-gradient-primary-start: 0 255 65;
-  --oui-gradient-primary-end: 0 255 65;
-  --oui-gradient-secondary-start: 0 255 65;
-  --oui-gradient-secondary-end: 0 255 65;
-  --oui-gradient-success-start: 1 83 68;
-  --oui-gradient-success-end: 41 223 169;
-  --oui-gradient-danger-start: 153 24 76;
-  --oui-gradient-danger-end: 245 97 139;
-  --oui-gradient-brand-start: 0 255 65;
-  --oui-gradient-brand-end: 0 255 65;
+  --oui-gradient-primary-start: 255 255 255;
+  --oui-gradient-primary-end: 180 180 180;
+  --oui-gradient-secondary-start: 255 255 255;
+  --oui-gradient-secondary-end: 180 180 180;
+  --oui-gradient-success-start: 80 80 80;
+  --oui-gradient-success-end: 255 255 255;
+  --oui-gradient-danger-start: 40 40 40;
+  --oui-gradient-danger-end: 180 180 180;
+  --oui-gradient-brand-start: 255 255 255;
+  --oui-gradient-brand-end: 180 180 180;
   --oui-gradient-brand-stop-start: 16.62%;
   --oui-gradient-brand-stop-end: 99.5%;
   --oui-gradient-brand-angle: 17.44deg;
-  --oui-gradient-warning-start: 152 58 8;
-  --oui-gradient-warning-end: 255 209 70;
-  --oui-gradient-neutral-start: 8 8 8;
-  --oui-gradient-neutral-end: 8 8 8;
-  /* rounded */
+  --oui-gradient-warning-start: 80 80 80;
+  --oui-gradient-warning-end: 255 255 255;
+  --oui-gradient-neutral-start: 0 0 0;
+  --oui-gradient-neutral-end: 20 20 20;
+  /* rounded — keep sharp edges */
   --oui-rounded-sm: 0px;
   --oui-rounded: 0px;
-  --oui-rounded-md: 4px;
+  --oui-rounded-md: 0px;
   --oui-rounded-lg: 0px;
   --oui-rounded-xl: 0px;
   --oui-rounded-2xl: 0px;
@@ -76,19 +76,12 @@
 }
 
 html, body {
-  font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
+  font-family: 'Share Tech Mono', monospace !important;
   font-size: 16px !important;
-  background: #080808 !important;
+  background: #000000 !important;
 }
 
-.orderly-app-container,
-.orderly-app-container *,
-.orderly-app-container *::before,
-.orderly-app-container *::after {
-  font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
-}
-
-/* HEADER - solid black, no transparency, no matrix bleed */
+/* HEADER */
 header, nav,
 [class*="header"],
 [class*="nav"],
@@ -100,13 +93,12 @@ header, nav,
   background-color: #000000 !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
   position: relative !important;
   z-index: 1000 !important;
   isolation: isolate !important;
 }
 
-/* Force header wrapper to be fully opaque */
 [class*="oui-h-"][class*="header"],
 [class*="scaffold"],
 [class*="main-nav"],
@@ -119,18 +111,16 @@ header, nav,
   isolation: isolate !important;
 }
 
-/* Remove character image from header logo area */
 [class*="logo"] img,
 [class*="header"] img:not([alt*="token"]):not([alt*="coin"]):not([alt*="icon"]) {
   display: none !important;
 }
 
-/* Logo text styling to match home page */
 [class*="logo"] {
-  font-family: 'Orbitron', monospace !important;
-  font-weight: 900 !important;
-  font-size: 1.5rem !important;
-  letter-spacing: 0.2em !important;
-  color: #00ff41 !important;
-  text-shadow: 0 0 20px #00ff41 !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.15em !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
 }
