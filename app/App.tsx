@@ -17,6 +17,17 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/webp" href={withBasePath("/favicon.webp")} />
       </Helmet>
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          backgroundImage: "url('/dex-wynn-background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+          zIndex: -1,
+        }}
+      />
       <HttpsRequiredWarning />
       <OrderlyProvider>
         <Outlet />
@@ -24,4 +35,3 @@ export default function App() {
     </>
   );
 }
-
