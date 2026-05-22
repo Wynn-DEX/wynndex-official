@@ -89,12 +89,18 @@ html, body {
   font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
-.oui-scaffold-root,
+html > body > div,
+html > body > div > div {
+  background: transparent !important;
+}
+
 [class*="oui-scaffold-root"],
 [class*="oui-scaffold-main"],
 [class*="oui-scaffold-body"],
 [class*="oui-bg-base-10"],
-[class*="oui-bg-background"] {
+[class*="oui-bg-background"],
+[class*="oui-layout"],
+[class*="oui-page"] {
   background-color: transparent !important;
   background: transparent !important;
 }
@@ -105,8 +111,8 @@ header,
 [class*="toolbar"],
 [class*="top-bar"],
 [class*="topbar"] {
-  background: rgba(0, 0, 0, 0.55) !important;
-  background-color: rgba(0, 0, 0, 0.55) !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  background-color: rgba(0, 0, 0, 0.75) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
@@ -120,8 +126,8 @@ header,
 [class*="mainNav"],
 [class*="top-nav"],
 [class*="topNav"] {
-  background: rgba(0, 0, 0, 0.55) !important;
-  background-color: rgba(0, 0, 0, 0.55) !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  background-color: rgba(0, 0, 0, 0.75) !important;
   z-index: 1000 !important;
   isolation: isolate !important;
 }
