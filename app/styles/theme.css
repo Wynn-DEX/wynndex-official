@@ -93,6 +93,17 @@ html, body {
   font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
+/* Force background image to show through scaffold */
+.oui-scaffold-root,
+[class*="oui-scaffold-root"],
+[class*="oui-scaffold-main"],
+[class*="oui-scaffold-body"],
+[class*="oui-bg-base-10"],
+[class*="oui-bg-background"] {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
 /* HEADER - transparent so background image shows through */
 header, nav,
 [class*="header"],
