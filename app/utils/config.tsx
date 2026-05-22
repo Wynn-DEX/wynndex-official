@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useEffect, useRef } from "react";
 import { useTranslation } from "@orderly.network/i18n";
 import { TradingPageProps } from "@orderly.network/trading";
 import {
@@ -208,22 +208,59 @@ const getColorConfig = (): ColorConfigInterface | undefined => {
   }
 };
 
-const WynnDEXLogo = () => (
-  <span
-    style={{
-      fontFamily: "'Orbitron', monospace",
-      fontWeight: 900,
-      fontSize: "1.4rem",
-      letterSpacing: "0.15em",
-      color: "#00ff41",
-      textShadow: "0 0 20px #00ff41",
-      textDecoration: "none",
-      userSelect: "none",
-    }}
-  >
-    Wynn<span style={{ color: "#ffffff" }}>DEX</span>
-  </span>
-);
+// ─── Matrix Typewriter Logo ───────────────────────────────────────────────────
+const WynnDEXLogo = () => {
+  const elRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const el = elRef.current;
+    if (!el) return;
+    const text = "dex.wynn.io";
+    let i = 0;
+    el.innerHTML = "";
+
+    const type = () => {
+      if (i < text.length) {
+        el.innerHTML =
+          `<span style="color:#00ff41;text-shadow:0 0 10px #00ff41">${text.slice(0, ++i)}</span>` +
+          `<span style="display:inline-block;animation:wynnblink 1s step-start infinite;color:#00ff41">▋</span>`;
+        setTimeout(type, Math.random() * 90 + 45);
+      } else {
+        el.innerHTML =
+          `<span style="color:#00ff41;text-shadow:0 0 10px #00ff41">${text}</span>` +
+          `<span style="display:inline-block;animation:wynnblink 1s step-start infinite;color:#00ff41">▋</span>`;
+      }
+    };
+
+    const timer = setTimeout(type, 600);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      <style>{`
+        @keyframes wynnblink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+      `}</style>
+      <span
+        ref={elRef}
+        style={{
+          fontFamily: "'Share Tech Mono', monospace",
+          fontWeight: 700,
+          fontSize: "1.05rem",
+          letterSpacing: "0.08em",
+          userSelect: "none",
+          display: "inline-flex",
+          alignItems: "center",
+          minWidth: "120px",
+        }}
+      />
+    </>
+  );
+};
+// ─────────────────────────────────────────────────────────────────────────────
 
 export const useOrderlyConfig = () => {
   const { t } = useTranslation();
