@@ -34,7 +34,7 @@
   --oui-color-base-7: 36 32 47;
   --oui-color-base-8: 29 26 38;
   --oui-color-base-9: 22 20 28;
-  --oui-color-base-10: 8 8 8;
+  --oui-color-base-10: 15 44 28;
   --oui-color-base-foreground: 255 255 255;
   --oui-color-line: 0 255 65;
   --oui-color-trading-loss: 230 46 27;
@@ -57,8 +57,8 @@
   --oui-gradient-brand-angle: 17.44deg;
   --oui-gradient-warning-start: 152 58 8;
   --oui-gradient-warning-end: 255 209 70;
-  --oui-gradient-neutral-start: 8 8 8;
-  --oui-gradient-neutral-end: 8 8 8;
+  --oui-gradient-neutral-start: 15 44 28;
+  --oui-gradient-neutral-end: 15 44 28;
   /* rounded */
   --oui-rounded-sm: 0px;
   --oui-rounded: 0px;
@@ -78,7 +78,7 @@
 html, body {
   font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
   font-size: 16px !important;
-  background: #080808 !important;
+  background: #0F2C1C !important;
 }
 
 .orderly-app-container,
