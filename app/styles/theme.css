@@ -10,7 +10,7 @@
   --oui-color-link-light: 0 255 65;
   --oui-color-secondary: 255 255 255;
   --oui-color-tertiary: 218 218 218;
-  --oui-color-quaternary: 180 200 188;
+  --oui-color-quaternary: 180 180 180;
   --oui-color-danger: 230 46 26;
   --oui-color-danger-light: 230 46 26;
   --oui-color-danger-darken: 230 46 26;
@@ -23,18 +23,18 @@
   --oui-color-warning-light: 255 229 133;
   --oui-color-warning-darken: 230 46 26;
   --oui-color-warning-contrast: 255 255 255;
-  --oui-color-fill: 20 52 34;
-  --oui-color-fill-active: 26 62 40;
-  --oui-color-base-1: 55 95 70;
-  --oui-color-base-2: 46 82 60;
-  --oui-color-base-3: 38 70 50;
-  --oui-color-base-4: 32 60 43;
-  --oui-color-base-5: 27 52 37;
-  --oui-color-base-6: 23 45 32;
-  --oui-color-base-7: 20 40 28;
-  --oui-color-base-8: 17 35 24;
-  --oui-color-base-9: 14 30 20;
-  --oui-color-base-10: 15 44 28;
+  --oui-color-fill: 10 10 10;
+  --oui-color-fill-active: 18 18 18;
+  --oui-color-base-1: 50 50 50;
+  --oui-color-base-2: 40 40 40;
+  --oui-color-base-3: 32 32 32;
+  --oui-color-base-4: 26 26 26;
+  --oui-color-base-5: 20 20 20;
+  --oui-color-base-6: 16 16 16;
+  --oui-color-base-7: 12 12 12;
+  --oui-color-base-8: 8 8 8;
+  --oui-color-base-9: 4 4 4;
+  --oui-color-base-10: 0 0 0;
   --oui-color-base-foreground: 255 255 255;
   --oui-color-line: 0 255 65;
   --oui-color-trading-loss: 230 46 27;
@@ -57,8 +57,8 @@
   --oui-gradient-brand-angle: 17.44deg;
   --oui-gradient-warning-start: 152 58 8;
   --oui-gradient-warning-end: 255 209 70;
-  --oui-gradient-neutral-start: 15 44 28;
-  --oui-gradient-neutral-end: 15 44 28;
+  --oui-gradient-neutral-start: 0 0 0;
+  --oui-gradient-neutral-end: 0 0 0;
   /* rounded */
   --oui-rounded-sm: 0px;
   --oui-rounded: 0px;
@@ -78,7 +78,7 @@
 html, body {
   font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
   font-size: 16px !important;
-  background: #0F2C1C !important;
+  background: #000000 !important;
 }
 
 .orderly-app-container,
@@ -88,7 +88,7 @@ html, body {
   font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
-/* HEADER - matching main background */
+/* HEADER - solid crisp black */
 header, nav,
 [class*="header"],
 [class*="nav"],
@@ -96,8 +96,8 @@ header, nav,
 [class*="toolbar"],
 [class*="top-bar"],
 [class*="topbar"] {
-  background: #0F2C1C !important;
-  background-color: #0F2C1C !important;
+  background: #000000 !important;
+  background-color: #000000 !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
@@ -113,8 +113,8 @@ header, nav,
 [class*="mainNav"],
 [class*="top-nav"],
 [class*="topNav"] {
-  background: #0F2C1C !important;
-  background-color: #0F2C1C !important;
+  background: #000000 !important;
+  background-color: #000000 !important;
   z-index: 1000 !important;
   isolation: isolate !important;
 }
