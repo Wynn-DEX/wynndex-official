@@ -4,33 +4,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* hide trading rewards on mobile */
+
 .oui-portfolio-page .oui-box.oui-flex.oui-flex-nowrap>div:nth-child(2).oui-box.oui-flex.oui-justify-start.oui-flex-nowrap.oui-relative {
   display: none;
 }
-/* HEADER - solid black matching wynndex.io home page */
+
+.oui-scaffold-root,
+.oui-scaffold-root .oui-scaffold-main,
+.oui-scaffold-root .oui-scaffold-body {
+  background: transparent !important;
+}
+
 .oui-scaffold-root .oui-scaffold-topNavbar>header {
   height: 64px !important;
   min-height: 64px !important;
-  background: rgba(0, 0, 0, 0.88) !important;
+  background: rgba(0, 0, 0, 0.75) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   box-shadow: none !important;
-  border-bottom: none !important;
+  border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
   display: flex !important;
   align-items: center !important;
   padding: 0 3rem !important;
 }
+
 .oui-scaffold-root .oui-scaffold-topNavbar>header a>img {
   height: 32px !important;
   width: auto !important;
   max-width: none !important;
   flex-shrink: 0;
 }
+
 .oui-scaffold-root .oui-scaffold-topNavbar>header a:has(> img[alt="logo"]) {
   flex-shrink: 0;
 }
-/* Nav link styles matching home page */
+
 .oui-main-nav button,
 .oui-main-nav a {
   font-size: 0.75rem !important;
@@ -38,8 +46,8 @@
   text-transform: uppercase !important;
   font-family: 'Share Tech Mono', monospace !important;
 }
+
 @media (min-width: 1024px) {
-  /* Apply white to nav links and spans but NOT to the logo spans */
   .oui-scaffold-root .oui-scaffold-topNavbar>header a:not(:first-of-type),
   .oui-scaffold-root .oui-scaffold-topNavbar>header span:not([style]) {
     color: #ffffff !important;
@@ -48,9 +56,11 @@
     color: inherit !important;
   }
 }
+
 .oui-main-nav button[data-actived] {
   transition: background-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
 }
+
 .oui-main-nav button[data-actived]:hover,
 .oui-main-nav button[data-actived]:focus-visible {
   background: rgba(0, 255, 65, 0.12) !important;
@@ -60,22 +70,23 @@
     inset 0 0 12px rgba(0, 255, 65, 0.12);
   color: rgb(0, 255, 65) !important;
 }
+
 .oui-main-nav button[data-actived]:hover span,
 .oui-main-nav button[data-actived]:focus-visible span {
   text-shadow:
     0 0 6px rgba(0, 255, 65, 0.85),
     0 0 14px rgba(0, 255, 65, 0.45);
 }
-/* MOBILE HEADER - solid black matching wynndex.io home page */
+
 @media (max-width: 1023px) {
   .oui-scaffold-root.oui-w-full>header {
     height: 60px !important;
     min-height: 60px !important;
-    background: rgba(0, 0, 0, 0.88) !important;
+    background: rgba(0, 0, 0, 0.75) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     box-shadow: none !important;
-    border-bottom: none !important;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.2) !important;
     display: flex !important;
     align-items: center !important;
     padding: 0 1rem !important;
