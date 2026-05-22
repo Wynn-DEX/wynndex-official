@@ -1,65 +1,65 @@
 :root {
-  --oui-font-family: 'Share Tech Mono', 'Courier New', monospace;
+  --oui-font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
   --oui-font-size-base: 16px;
   /* colors */
   --oui-color-primary: 0 255 65;
-  --oui-color-primary-light: 80 255 120;
-  --oui-color-primary-darken: 0 200 50;
+  --oui-color-primary-light: 0 255 65;
+  --oui-color-primary-darken: 0 255 65;
   --oui-color-primary-contrast: 0 0 0;
   --oui-color-link: 0 255 65;
-  --oui-color-link-light: 80 255 120;
+  --oui-color-link-light: 0 255 65;
   --oui-color-secondary: 255 255 255;
-  --oui-color-tertiary: 200 255 210;
-  --oui-color-quaternary: 160 220 175;
-  --oui-color-danger: 255 50 50;
-  --oui-color-danger-light: 255 90 90;
-  --oui-color-danger-darken: 200 20 20;
+  --oui-color-tertiary: 218 218 218;
+  --oui-color-quaternary: 218 218 218;
+  --oui-color-danger: 230 46 26;
+  --oui-color-danger-light: 230 46 26;
+  --oui-color-danger-darken: 230 46 26;
   --oui-color-danger-contrast: 255 255 255;
   --oui-color-success: 0 255 65;
-  --oui-color-success-light: 80 255 120;
-  --oui-color-success-darken: 0 180 45;
-  --oui-color-success-contrast: 0 0 0;
+  --oui-color-success-light: 0 255 65;
+  --oui-color-success-darken: 0 255 65;
+  --oui-color-success-contrast: 255 255 255;
   --oui-color-warning: 255 209 70;
   --oui-color-warning-light: 255 229 133;
-  --oui-color-warning-darken: 200 150 0;
-  --oui-color-warning-contrast: 0 0 0;
-  --oui-color-fill: 0 18 8;
-  --oui-color-fill-active: 0 28 12;
-  --oui-color-base-1: 0 80 30;
-  --oui-color-base-2: 0 60 22;
-  --oui-color-base-3: 0 45 16;
-  --oui-color-base-4: 0 32 12;
-  --oui-color-base-5: 0 24 9;
-  --oui-color-base-6: 0 18 7;
-  --oui-color-base-7: 0 14 5;
-  --oui-color-base-8: 0 10 4;
-  --oui-color-base-9: 0 6 2;
-  --oui-color-base-10: 0 0 0;
+  --oui-color-warning-darken: 230 46 26;
+  --oui-color-warning-contrast: 255 255 255;
+  --oui-color-fill: 36 32 47;
+  --oui-color-fill-active: 40 46 58;
+  --oui-color-base-1: 93 83 123;
+  --oui-color-base-2: 81 72 107;
+  --oui-color-base-3: 68 61 69;
+  --oui-color-base-4: 57 52 74;
+  --oui-color-base-5: 51 46 66;
+  --oui-color-base-6: 43 38 56;
+  --oui-color-base-7: 36 32 47;
+  --oui-color-base-8: 29 26 38;
+  --oui-color-base-9: 22 20 28;
+  --oui-color-base-10: 8 8 8;
   --oui-color-base-foreground: 255 255 255;
   --oui-color-line: 0 255 65;
-  --oui-color-trading-loss: 255 50 50;
+  --oui-color-trading-loss: 230 46 27;
   --oui-color-trading-loss-contrast: 255 255 255;
   --oui-color-trading-profit: 0 255 65;
-  --oui-color-trading-profit-contrast: 0 0 0;
+  --oui-color-trading-profit-contrast: 255 255 255;
   /* gradients */
   --oui-gradient-primary-start: 0 255 65;
-  --oui-gradient-primary-end: 0 180 45;
+  --oui-gradient-primary-end: 0 255 65;
   --oui-gradient-secondary-start: 0 255 65;
-  --oui-gradient-secondary-end: 0 180 45;
-  --oui-gradient-success-start: 0 60 22;
-  --oui-gradient-success-end: 0 255 65;
-  --oui-gradient-danger-start: 100 0 0;
-  --oui-gradient-danger-end: 255 50 50;
+  --oui-gradient-secondary-end: 0 255 65;
+  --oui-gradient-success-start: 1 83 68;
+  --oui-gradient-success-end: 41 223 169;
+  --oui-gradient-danger-start: 153 24 76;
+  --oui-gradient-danger-end: 245 97 139;
   --oui-gradient-brand-start: 0 255 65;
-  --oui-gradient-brand-end: 0 180 45;
+  --oui-gradient-brand-end: 0 255 65;
   --oui-gradient-brand-stop-start: 16.62%;
   --oui-gradient-brand-stop-end: 99.5%;
   --oui-gradient-brand-angle: 17.44deg;
-  --oui-gradient-warning-start: 100 80 0;
+  --oui-gradient-warning-start: 152 58 8;
   --oui-gradient-warning-end: 255 209 70;
-  --oui-gradient-neutral-start: 0 0 0;
-  --oui-gradient-neutral-end: 0 14 5;
-  /* rounded — keep sharp */
+  --oui-gradient-neutral-start: 8 8 8;
+  --oui-gradient-neutral-end: 8 8 8;
+  /* rounded */
   --oui-rounded-sm: 0px;
   --oui-rounded: 0px;
   --oui-rounded-md: 4px;
@@ -76,12 +76,19 @@
 }
 
 html, body {
-  font-family: 'Share Tech Mono', monospace !important;
+  font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
   font-size: 16px !important;
-  background: #000000 !important;
+  background: #080808 !important;
 }
 
-/* HEADER */
+.orderly-app-container,
+.orderly-app-container *,
+.orderly-app-container *::before,
+.orderly-app-container *::after {
+  font-family: 'Satoshi', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* HEADER - solid black, no transparency, no matrix bleed */
 header, nav,
 [class*="header"],
 [class*="nav"],
@@ -99,6 +106,7 @@ header, nav,
   isolation: isolate !important;
 }
 
+/* Force header wrapper to be fully opaque */
 [class*="oui-h-"][class*="header"],
 [class*="scaffold"],
 [class*="main-nav"],
@@ -111,16 +119,18 @@ header, nav,
   isolation: isolate !important;
 }
 
+/* Remove character image from header logo area */
 [class*="logo"] img,
 [class*="header"] img:not([alt*="token"]):not([alt*="coin"]):not([alt*="icon"]) {
   display: none !important;
 }
 
+/* Logo text styling to match home page */
 [class*="logo"] {
-  font-family: 'Share Tech Mono', monospace !important;
-  font-weight: 700 !important;
-  font-size: 1.2rem !important;
-  letter-spacing: 0.15em !important;
+  font-family: 'Orbitron', monospace !important;
+  font-weight: 900 !important;
+  font-size: 1.5rem !important;
+  letter-spacing: 0.2em !important;
   color: #00ff41 !important;
-  text-shadow: 0 0 20px #00ff41, 0 0 40px rgba(0, 255, 65, 0.3) !important;
+  text-shadow: 0 0 20px #00ff41 !important;
 }
