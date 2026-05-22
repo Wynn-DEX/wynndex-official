@@ -353,11 +353,10 @@ export const useOrderlyConfig = () => {
           justify="between"
           className="oui-w-full"
           style={{
-            background: "rgba(0,0,0,0.88)",
-            backdropFilter: "blur(16px)",
-            borderBottom: "1px solid rgba(0,255,65,0.2)",
-            padding: "0 2rem",
-          }}
+  background: "transparent",
+  borderBottom: "1px solid rgba(0,255,65,0.2)",
+  padding: "0 2rem",
+}}
         >
           <Flex itemAlign={"center"} className={cn("oui-gap-3", "oui-overflow-hidden")}>
             {isMobile && (
