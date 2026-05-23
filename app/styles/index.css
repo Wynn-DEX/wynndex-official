@@ -160,3 +160,105 @@ body {
     flex-shrink: 0;
   }
 }
+
+/* ═══════════════════════════════════════════
+   MATRIX PANEL OVERLAY STYLES
+   ═══════════════════════════════════════════ */
+
+/* All main trading panels - dark glass effect */
+.oui-trading-layout,
+.oui-trading-right-sidebar,
+.oui-order-book,
+.oui-last-trades,
+.oui-positions-container,
+[class*="orderBook"],
+[class*="lastTrades"],
+[class*="tradingRight"],
+[class*="positionList"] {
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(0, 255, 65, 0.15) !important;
+  border-radius: 8px !important;
+}
+
+/* Right sidebar panel - order entry */
+.oui-trading-right-sidebar,
+[class*="rightSidebar"],
+[class*="orderEntry"],
+[class*="OrderEntry"] {
+  background: rgba(0, 0, 0, 0.82) !important;
+  border: 1px solid rgba(0, 255, 65, 0.2) !important;
+  border-radius: 8px !important;
+}
+
+/* Order book panel */
+[class*="orderBook"],
+[class*="OrderBook"] {
+  background: rgba(0, 0, 0, 0.75) !important;
+  border: 1px solid rgba(0, 255, 65, 0.15) !important;
+  border-radius: 8px !important;
+}
+
+/* Last trades panel */
+[class*="lastTrade"],
+[class*="LastTrade"] {
+  background: rgba(0, 0, 0, 0.75) !important;
+  border: 1px solid rgba(0, 255, 65, 0.15) !important;
+  border-radius: 8px !important;
+}
+
+/* Bottom positions/orders panel */
+[class*="position"],
+[class*="Position"] {
+  background: rgba(0, 0, 0, 0.75) !important;
+  border-top: 1px solid rgba(0, 255, 65, 0.15) !important;
+}
+
+/* Buy / Long button */
+[class*="buyButton"],
+[class*="BuyButton"],
+button[data-testid*="buy"],
+button[data-testid*="long"] {
+  background: linear-gradient(135deg, #00ff41, #00cc33) !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 16px rgba(0, 255, 65, 0.4) !important;
+  border: none !important;
+}
+
+/* Sell / Short button */
+[class*="sellButton"],
+[class*="SellButton"],
+button[data-testid*="sell"],
+button[data-testid*="short"] {
+  background: linear-gradient(135deg, #d80000, #aa0000) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 16px rgba(216, 0, 0, 0.4) !important;
+  border: none !important;
+}
+
+/* Panel section headers */
+[class*="panelHeader"],
+[class*="PanelHeader"],
+[class*="sectionHeader"] {
+  border-bottom: 1px solid rgba(0, 255, 65, 0.15) !important;
+  color: rgba(0, 255, 65, 0.8) !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* Tab bars inside panels */
+[class*="tabBar"],
+[class*="TabBar"],
+[class*="tabs"] {
+  border-bottom: 1px solid rgba(0, 255, 65, 0.15) !important;
+}
+
+/* Active tab */
+[class*="tab"][data-active="true"],
+[class*="Tab"][data-active="true"] {
+  color: #00ff41 !important;
+  border-bottom: 2px solid #00ff41 !important;
+}
