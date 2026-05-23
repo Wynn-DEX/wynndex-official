@@ -164,29 +164,27 @@ body {
    MATRIX PANEL OVERLAY STYLES
    ═══════════════════════════════════════════ */
 
-/* All base background panels — semi-transparent glass */
+/* Make ALL panels transparent so background shows through */
+.oui-bg-base-1,
+.oui-bg-base-2,
+.oui-bg-base-3,
+.oui-bg-base-4,
+.oui-bg-base-5,
+.oui-bg-base-6,
+.oui-bg-base-7,
 .oui-bg-base-8,
 .oui-bg-base-9,
 .oui-bg-base-10 {
-  background-color: rgba(0, 0, 0, 0.45) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  background-color: rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
 }
 
-/* Panel borders */
+/* Green borders on main panels */
 .oui-bg-base-8,
-.oui-bg-base-9 {
+.oui-bg-base-9,
+.oui-bg-base-7 {
   border: 1px solid rgba(0, 255, 65, 0.15) !important;
-}
-
-/* Right order entry sidebar */
-.oui-bg-base-8 {
-  background-color: rgba(0, 0, 0, 0.50) !important;
-}
-
-/* Positions / bottom panel */
-.oui-scaffold-root .oui-h-full.oui-flex.oui-flex-col {
-  background: rgba(0, 0, 0, 0.40) !important;
 }
 
 /* Tab active state */
@@ -214,7 +212,7 @@ body {
   box-shadow: 0 0 16px rgba(216, 0, 0, 0.35) !important;
 }
 
-/* Connect wallet button — keep green */
+/* Connect wallet button */
 button[data-testid*="connect"],
 button[data-testid*="wallet"] {
   background: linear-gradient(135deg, #00ff41, #00cc33) !important;
