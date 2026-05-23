@@ -175,15 +175,40 @@ body {
 .oui-bg-base-8,
 .oui-bg-base-9,
 .oui-bg-base-10 {
-  background-color: rgba(0, 0, 0, 0.35) !important;
-  backdrop-filter: blur(6px) !important;
-  -webkit-backdrop-filter: blur(6px) !important;
+  background-color: rgba(0, 0, 0, 0.20) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
 }
 
 /* Green borders on main panels */
 .oui-bg-base-8,
 .oui-bg-base-9,
 .oui-bg-base-7 {
+  border: 1px solid rgba(0, 255, 65, 0.15) !important;
+}
+
+/* Top ticker bar — more transparent */
+[class*="symbol-info"],
+[class*="symbolInfo"],
+[class*="ticker"],
+[class*="Ticker"],
+[class*="marketInfo"],
+[class*="MarketInfo"],
+.oui-scaffold-root .oui-flex.oui-items-center.oui-gap-2,
+.oui-scaffold-root .oui-h-[49px],
+.oui-scaffold-root .oui-border-b {
+  background: rgba(0, 0, 0, 0.20) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+/* Order book — more transparent */
+[class*="orderBook"],
+[class*="OrderBook"],
+[class*="order-book"] {
+  background: rgba(0, 0, 0, 0.20) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
   border: 1px solid rgba(0, 255, 65, 0.15) !important;
 }
 
