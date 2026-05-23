@@ -36,6 +36,24 @@ body {
   z-index: 1;
 }
 
+/* Hide left-side price/markets strip */
+.oui-scaffold-root aside,
+.oui-scaffold-root [class*="sider"],
+.oui-scaffold-root [class*="Sider"],
+.oui-scaffold-root [class*="sidebar"],
+.oui-scaffold-root [class*="Sidebar"] {
+  display: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+}
+
+/* Remove leftover spacing after hiding the left strip */
+.oui-scaffold-root .oui-scaffold-main,
+.oui-scaffold-root .oui-scaffold-body {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
 .oui-portfolio-page .oui-box.oui-flex.oui-flex-nowrap>div:nth-child(2).oui-box.oui-flex.oui-justify-start.oui-flex-nowrap.oui-relative {
   display: none;
 }
