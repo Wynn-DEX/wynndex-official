@@ -5,6 +5,26 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  min-height: 100%;
+  background-image: url('/dex-wynn-background.PNG') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-color: #000000 !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  z-index: -1;
+}
+
 .oui-portfolio-page .oui-box.oui-flex.oui-flex-nowrap>div:nth-child(2).oui-box.oui-flex.oui-justify-start.oui-flex-nowrap.oui-relative {
   display: none;
 }
@@ -52,6 +72,7 @@
   .oui-scaffold-root .oui-scaffold-topNavbar>header span:not([style]) {
     color: #ffffff !important;
   }
+
   .oui-scaffold-root .oui-scaffold-topNavbar>header button[data-testid="oui-testid-nav-bar-address-btn"] span {
     color: inherit !important;
   }
@@ -91,12 +112,14 @@
     align-items: center !important;
     padding: 0 1rem !important;
   }
+
   .oui-scaffold-root.oui-w-full>header img[alt="logo"] {
     height: 32px !important;
     width: auto !important;
     max-width: none !important;
     flex-shrink: 0;
   }
+
   .oui-scaffold-root.oui-w-full>header a:has(> img[alt="logo"]) {
     flex-shrink: 0;
   }
