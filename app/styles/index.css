@@ -252,18 +252,9 @@ button[data-testid*="wallet"] {
   border-color: rgba(0, 255, 65, 0.15) !important;
 }
 
-/* ── Fix floating footer bar ── */
+/* ── Hide floating footer bar completely ── */
 .oui-scaffold-root .oui-scaffold-footer,
 .oui-scaffold-root [class*="oui-scaffold-footer"],
 .oui-scaffold-root footer {
-  position: fixed !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 999 !important;
-  width: 100% !important;
-  background: rgba(0, 0, 0, 0.85) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-top: 1px solid rgba(0, 255, 65, 0.15) !important;
+  display: none !important;
 }
