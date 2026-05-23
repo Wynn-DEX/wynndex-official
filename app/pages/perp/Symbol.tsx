@@ -35,6 +35,15 @@ export default function PerpSymbol() {
 
   return (
     <div className="h-full">
+      <style>{`
+        .oui-scaffold-left-sidebar,
+        [class*="leftSidebar"],
+        [class*="left-sidebar"],
+        [data-testid="left-sidebar"] {
+          display: none !important;
+          width: 0 !important;
+        }
+      `}</style>
       {renderSEOTags(pageMeta, pageTitle)}
       <TradingPage
         symbol={symbol}
