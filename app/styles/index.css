@@ -164,16 +164,16 @@ body {
    MATRIX PANEL OVERLAY STYLES
    ═══════════════════════════════════════════ */
 
-/* All base background panels — dark glass */
+/* All base background panels — semi-transparent glass */
 .oui-bg-base-8,
 .oui-bg-base-9,
 .oui-bg-base-10 {
-  background-color: rgba(0, 0, 0, 0.75) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 
-/* Panel borders using Orderly's own base classes */
+/* Panel borders */
 .oui-bg-base-8,
 .oui-bg-base-9 {
   border: 1px solid rgba(0, 255, 65, 0.15) !important;
@@ -181,12 +181,12 @@ body {
 
 /* Right order entry sidebar */
 .oui-bg-base-8 {
-  background-color: rgba(0, 0, 0, 0.82) !important;
+  background-color: rgba(0, 0, 0, 0.50) !important;
 }
 
 /* Positions / bottom panel */
 .oui-scaffold-root .oui-h-full.oui-flex.oui-flex-col {
-  background: rgba(0, 0, 0, 0.70) !important;
+  background: rgba(0, 0, 0, 0.40) !important;
 }
 
 /* Tab active state */
