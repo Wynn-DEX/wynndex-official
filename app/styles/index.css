@@ -5,9 +5,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Default site background - keeps homepage as normal dark/matrix style */
 html,
 body {
   min-height: 100%;
+  background-color: #000000 !important;
+}
+
+/* City background only for the DEX/perp trading screen */
+.oui-scaffold-root {
   background-image: url('/dex-wynn-background.PNG') !important;
   background-size: cover !important;
   background-position: center center !important;
@@ -16,13 +22,18 @@ body {
   background-color: #000000 !important;
 }
 
-body::before {
+.oui-scaffold-root::before {
   content: "";
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
+}
+
+.oui-scaffold-root > * {
+  position: relative;
+  z-index: 1;
 }
 
 .oui-portfolio-page .oui-box.oui-flex.oui-flex-nowrap>div:nth-child(2).oui-box.oui-flex.oui-justify-start.oui-flex-nowrap.oui-relative {
@@ -32,7 +43,7 @@ body::before {
 .oui-scaffold-root,
 .oui-scaffold-root .oui-scaffold-main,
 .oui-scaffold-root .oui-scaffold-body {
-  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .oui-scaffold-root .oui-scaffold-topNavbar>header {
