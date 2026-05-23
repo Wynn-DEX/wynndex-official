@@ -41,10 +41,17 @@ body {
 .oui-scaffold-root [class*="sider"],
 .oui-scaffold-root [class*="Sider"],
 .oui-scaffold-root [class*="sidebar"],
-.oui-scaffold-root [class*="Sidebar"] {
+.oui-scaffold-root [class*="Sidebar"],
+.oui-scaffold-root [class*="LeftSide"],
+.oui-scaffold-root [class*="leftSide"],
+.oui-scaffold-root [class*="markets"],
+.oui-scaffold-root [class*="Markets"],
+.oui-scaffold-left-sidebar,
+.oui-trading-left-sidebar {
   display: none !important;
   width: 0 !important;
   min-width: 0 !important;
+  overflow: hidden !important;
 }
 
 /* Remove leftover spacing after hiding the left strip */
