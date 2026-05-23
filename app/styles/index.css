@@ -5,14 +5,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Default site background - keeps homepage as normal dark/matrix style */
+/* Default site background */
 html,
 body {
   min-height: 100%;
   background-color: #000000 !important;
 }
 
-/* City background only for the DEX/perp trading screen */
+/* City background for DEX/perp trading screen */
 .oui-scaffold-root {
   background-image: url('/dex-wynn-background.PNG') !important;
   background-size: cover !important;
@@ -44,8 +44,6 @@ body {
 .oui-scaffold-root [class*="Sidebar"],
 .oui-scaffold-root [class*="LeftSide"],
 .oui-scaffold-root [class*="leftSide"],
-.oui-scaffold-root [class*="markets"],
-.oui-scaffold-root [class*="Markets"],
 .oui-scaffold-left-sidebar,
 .oui-trading-left-sidebar {
   display: none !important;
@@ -71,6 +69,7 @@ body {
   background-color: transparent !important;
 }
 
+/* ── Navbar ── */
 .oui-scaffold-root .oui-scaffold-topNavbar>header {
   height: 64px !important;
   min-height: 64px !important;
@@ -165,100 +164,67 @@ body {
    MATRIX PANEL OVERLAY STYLES
    ═══════════════════════════════════════════ */
 
-/* All main trading panels - dark glass effect */
-.oui-trading-layout,
-.oui-trading-right-sidebar,
-.oui-order-book,
-.oui-last-trades,
-.oui-positions-container,
-[class*="orderBook"],
-[class*="lastTrades"],
-[class*="tradingRight"],
-[class*="positionList"] {
-  background: rgba(0, 0, 0, 0.75) !important;
+/* All base background panels — dark glass */
+.oui-bg-base-8,
+.oui-bg-base-9,
+.oui-bg-base-10 {
+  background-color: rgba(0, 0, 0, 0.75) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* Panel borders using Orderly's own base classes */
+.oui-bg-base-8,
+.oui-bg-base-9 {
   border: 1px solid rgba(0, 255, 65, 0.15) !important;
-  border-radius: 8px !important;
 }
 
-/* Right sidebar panel - order entry */
-.oui-trading-right-sidebar,
-[class*="rightSidebar"],
-[class*="orderEntry"],
-[class*="OrderEntry"] {
-  background: rgba(0, 0, 0, 0.82) !important;
-  border: 1px solid rgba(0, 255, 65, 0.2) !important;
-  border-radius: 8px !important;
+/* Right order entry sidebar */
+.oui-bg-base-8 {
+  background-color: rgba(0, 0, 0, 0.82) !important;
 }
 
-/* Order book panel */
-[class*="orderBook"],
-[class*="OrderBook"] {
-  background: rgba(0, 0, 0, 0.75) !important;
-  border: 1px solid rgba(0, 255, 65, 0.15) !important;
-  border-radius: 8px !important;
+/* Positions / bottom panel */
+.oui-scaffold-root .oui-h-full.oui-flex.oui-flex-col {
+  background: rgba(0, 0, 0, 0.70) !important;
 }
 
-/* Last trades panel */
-[class*="lastTrade"],
-[class*="LastTrade"] {
-  background: rgba(0, 0, 0, 0.75) !important;
-  border: 1px solid rgba(0, 255, 65, 0.15) !important;
-  border-radius: 8px !important;
+/* Tab active state */
+[data-active="true"],
+[aria-selected="true"] {
+  color: #00ff41 !important;
+  border-bottom-color: #00ff41 !important;
 }
 
-/* Bottom positions/orders panel */
-[class*="position"],
-[class*="Position"] {
-  background: rgba(0, 0, 0, 0.75) !important;
-  border-top: 1px solid rgba(0, 255, 65, 0.15) !important;
-}
-
-/* Buy / Long button */
-[class*="buyButton"],
-[class*="BuyButton"],
-button[data-testid*="buy"],
-button[data-testid*="long"] {
+/* Buy button */
+.oui-bg-trade-profit,
+[class*="oui-bg-primary"] {
   background: linear-gradient(135deg, #00ff41, #00cc33) !important;
   color: #000000 !important;
   font-weight: 700 !important;
-  box-shadow: 0 0 16px rgba(0, 255, 65, 0.4) !important;
-  border: none !important;
+  box-shadow: 0 0 16px rgba(0, 255, 65, 0.35) !important;
 }
 
-/* Sell / Short button */
-[class*="sellButton"],
-[class*="SellButton"],
-button[data-testid*="sell"],
-button[data-testid*="short"] {
+/* Sell button */
+.oui-bg-trade-loss,
+[class*="oui-bg-danger"] {
   background: linear-gradient(135deg, #d80000, #aa0000) !important;
   color: #ffffff !important;
   font-weight: 700 !important;
-  box-shadow: 0 0 16px rgba(216, 0, 0, 0.4) !important;
-  border: none !important;
+  box-shadow: 0 0 16px rgba(216, 0, 0, 0.35) !important;
 }
 
-/* Panel section headers */
-[class*="panelHeader"],
-[class*="PanelHeader"],
-[class*="sectionHeader"] {
-  border-bottom: 1px solid rgba(0, 255, 65, 0.15) !important;
-  color: rgba(0, 255, 65, 0.8) !important;
-  font-family: 'Share Tech Mono', monospace !important;
-  letter-spacing: 0.1em !important;
+/* Connect wallet button — keep green */
+button[data-testid*="connect"],
+button[data-testid*="wallet"] {
+  background: linear-gradient(135deg, #00ff41, #00cc33) !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
 }
 
-/* Tab bars inside panels */
-[class*="tabBar"],
-[class*="TabBar"],
-[class*="tabs"] {
-  border-bottom: 1px solid rgba(0, 255, 65, 0.15) !important;
-}
-
-/* Active tab */
-[class*="tab"][data-active="true"],
-[class*="Tab"][data-active="true"] {
-  color: #00ff41 !important;
-  border-bottom: 2px solid #00ff41 !important;
+/* Line separators */
+.oui-border-line,
+.oui-border-line-4,
+.oui-border-line-12 {
+  border-color: rgba(0, 255, 65, 0.15) !important;
 }
